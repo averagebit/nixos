@@ -1,0 +1,4 @@
+*.out
+*.test
+go.work
+result

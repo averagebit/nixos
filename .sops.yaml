@@ -1,0 +1,24 @@
+keys:
+  - users:
+      - &averagebit 3C960DA958B76348
+  - hosts:
+      - &anton age1s2jrj0mac4208d45cxdt4wu760zq0dlxm2rvzjrgyjsznsyxf5xqmjqkhq
+      - &wopr age1asltlwmhw06kq4uk520306wpy4qgnm3x6d5rh0sca0xzyzkw447syydxry
+      - &zulu age10e0zwkvdemyqvawl6zu4krslda5wjk297ahka9jq8agfw5qa99ssclzp5v
+
+creation_rules:
+  - path_regex: hosts/common/secrets.ya?ml$
+    key_groups:
+      - age:
+          - *anton
+          - *wopr
+          - *zulu
+        pgp:
+          - *averagebit
+
+  - path_regex: hosts/anton/secrets.ya?ml$
+    key_groups:
+      - age:
+          - *anton
+        pgp:
+          - *averagebit
