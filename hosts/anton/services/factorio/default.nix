@@ -14,4 +14,8 @@
   };
 
   networking.firewall.allowedTCPPorts = [34197];
+
+  environment.persistence = {
+    "/persist".directories = ["/var/lib/private/factorio"];
+  };
 }
