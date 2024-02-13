@@ -150,8 +150,7 @@
           "SUPERSHIFT,Q,killactive,"
 
           "SUPER,S,togglesplit"
-          "SUPER,F,fullscreen,1"
-          "SUPERSHIFT,F,fullscreen,0"
+          "SUPER,F,fullscreen"
           "SUPERSHIFT,SPACE,togglefloating"
 
           "SUPER,MINUS,splitratio,-0.25"
