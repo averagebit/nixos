@@ -9,6 +9,7 @@
       server-port = 25572;
       online-mode = false;
       motd = "Nixcraft Modpack";
+      enforce-whitelist = true;
     };
     files = {
       "config/FabricProxy-Lite.toml".value = {
