@@ -5,11 +5,11 @@
       format = lib.concatStrings [
         "$username"
         "$hostname"
-        "$shlvl"
         "$directory"
         "$git_branch"
         "$container"
         "$line_break"
+        "$shlvl"
         "$character"
       ];
       username = {
@@ -22,6 +22,14 @@
       };
       directory = {
         style = "bold blue";
+      };
+      shlvl = {
+        disabled = false;
+        format = "[$symbol](@style)";
+        repeat = true;
+        repeat_offset = 1;
+        symbol = "❯";
+        threshold = 0;
       };
     };
   };
