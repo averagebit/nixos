@@ -12,6 +12,7 @@
     ./openssh
     ./starship
     ./tmux
+    ./weechat
   ];
 
   home.packages = with pkgs; [
