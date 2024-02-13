@@ -8,7 +8,7 @@
     amass
     anew
     ffuf
-    holeho
+    holehe
     httpx
     nmap
     subfinder
