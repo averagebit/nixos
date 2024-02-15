@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   imports = [
+    ./bottles
     ./carla
     ./chrome
     ./discord
