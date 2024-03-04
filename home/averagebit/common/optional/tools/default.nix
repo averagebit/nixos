@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   imports = [
+    ./awscli
     ./bash
     ./btop
     ./direnv
@@ -16,16 +17,16 @@
   ];
 
   home.packages = with pkgs; [
-    cheat
-    clone
-    ix
-    myip
-    urlencode
-    yank
+    cheat # cheat.sh browser
+    clone # git clone wrapper
     distrobox # Podman wrapper for running other distros
-    pfetch # System information
+    ix # ix.io uploader
+    myip # ip fetcher
     nh # Home manager and Nix wrapper
     nil # Nix LSP
+    pfetch # System information
+    urlencode # URI encoder
+    yank # copy utility
     yt-dlp # YouTube downloader
   ];
 }
