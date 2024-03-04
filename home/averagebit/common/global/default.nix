@@ -50,7 +50,6 @@
         "workspace"
         ".local/bin"
         ".local/share/nix"
-        ".local/share/containers"
       ];
     };
   };
