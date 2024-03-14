@@ -51,6 +51,7 @@
       lazygit # TUI Git client
       lm_sensors # Hardware sensors
       lshw # Hardware management
+      lsof # Tool to list open files
       nix-index # Nix file database
       nix-tree # Nix store explorer
       p7zip # 7-Zip archive management
