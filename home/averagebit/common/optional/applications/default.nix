@@ -7,6 +7,7 @@
     ./easyeffects
     ./qjackctl
     ./reaper
+    ./vscode
   ];
 
   home.packages = with pkgs; [
