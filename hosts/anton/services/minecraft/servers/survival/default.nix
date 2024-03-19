@@ -8,6 +8,7 @@
       server-port = 25571;
       online-mode = false;
       motd = "Nixcraft Survival";
+      difficulty = 3;
     };
     files = {
       "ops.json".value = [
