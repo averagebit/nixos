@@ -21,8 +21,6 @@ buildGoModule rec {
 
   CGO_ENABLED = 0;
 
-  runtimeInputs = with pkgs; [bun];
-
   meta = with lib; {
     homepage = "https://github.com/sst/ion";
     description = "Ion is a new engine for deploying SST apps. It uses Pulumi and Terraform, as opposed to CDK and CloudFormation..";
