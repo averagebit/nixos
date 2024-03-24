@@ -243,7 +243,7 @@ in {
           scroll-step = 5;
           on-click = "${pkgs.pamixer}/bin/pamixer -t";
           on-click-right = "${pkgs.pamixer}/bin/pamixer --default-source -t";
-          on-click-middle = "${pkgs.pwvucontrol}/bin/pwvucontrol";
+          on-click-middle = "${pkgs.pavucontrol}/bin/pavucontrol";
         };
         tray = {
           icon-size = 14;

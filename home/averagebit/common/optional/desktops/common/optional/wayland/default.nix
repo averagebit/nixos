@@ -13,7 +13,6 @@
   home.packages = with pkgs; [
     brightnessctl # Brightness management
     grim # Srceenshots
-    # pwvucontrol # Pipewire volume management
     pavucontrol # Volume management
     slurp # Srceenshots
     wev # Event viewer
