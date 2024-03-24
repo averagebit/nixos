@@ -26,6 +26,7 @@
     nh # Home manager and Nix wrapper
     nil # Nix LSP
     pfetch # System information
+    sst # SST AWS serverless dev stuff
     urlencode # URI encoder
     yank # copy utility
     yt-dlp # YouTube downloader
