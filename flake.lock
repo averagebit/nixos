@@ -301,15 +301,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1711241743,
-        "narHash": "sha256-S7jBl0z4tFKj6PpjcXHoyFbJxEecVSmfLolriYJaO5k=",
-        "owner": "misterio77",
+        "lastModified": 1707439715,
+        "narHash": "sha256-AXjoQ6ca1Al/AWgPOfJ9r5B8QkrkPmJ1alZdlZpVoAM=",
+        "owner": "averagebit",
         "repo": "nix-minecraft",
-        "rev": "a2dba4116b91d3563a639ec1d2952fbb4af2adf3",
+        "rev": "762a23174699e24b7cd7570c52da560c7a8c3ad3",
         "type": "github"
       },
       "original": {
-        "owner": "misterio77",
+        "owner": "averagebit",
         "repo": "nix-minecraft",
         "type": "github"
       }
