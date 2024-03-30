@@ -6,16 +6,16 @@
 }:
 buildGoModule rec {
   pname = "sst";
-  version = "0.0.194";
+  version = "0.0.245";
 
   src = fetchFromGitHub {
     owner = "sst";
     repo = "ion";
     rev = "v${version}";
-    hash = "sha256-TlEtS50RYHzJZH0zGryh/W/PkJ6da6ah+RbsgLOUtgE=";
+    hash = "sha256-isPXTv2MXWBI3YrDPxCzLliTgXjZxrjTiSRacLxgKOQ=";
   };
 
-  vendorHash = "sha256-IXnYxKnQXKCpQvfxUq2kRDqYG1+l0svOYFPvvMdECzk=";
+  vendorHash = "sha256-F/6VawWgBjpNcjRT2rbf/01Dc5Xzd6KrUD3kFPVUVCQ=";
 
   ldflags = ["-s" "-w" "-X main.version=${version}"];
 
