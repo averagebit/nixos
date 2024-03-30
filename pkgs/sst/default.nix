@@ -28,6 +28,6 @@ buildGoModule rec {
     maintainers = with maintainers; [averagebit];
     platforms = platforms.unix;
     sourceProvenance = with sourceTypes; [fromSource];
-    # license = licenses.mit;
+    license = licenses.mit;
   };
 }
