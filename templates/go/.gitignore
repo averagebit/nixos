@@ -1,4 +1,8 @@
+# nix
+.direnv
+result
+
+# go
 *.out
 *.test
 go.work
-result
