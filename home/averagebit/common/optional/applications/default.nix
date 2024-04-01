@@ -7,6 +7,7 @@
     ./easyeffects
     ./qjackctl
     ./reaper
+    ./slack
     ./virt-manager
     ./vscode
   ];
