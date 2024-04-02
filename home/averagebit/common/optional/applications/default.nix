@@ -13,8 +13,9 @@
   ];
 
   home.packages = with pkgs; [
-    yubioath-flutter
-    vlc
+    tagger
     vial
+    vlc
+    yubioath-flutter
   ];
 }
