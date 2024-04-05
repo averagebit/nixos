@@ -3,5 +3,9 @@
 in
   pkgs.mkShell {
     inputsFrom = [mainPkg];
-    nativeBuildInputs = with pkgs; [go gotools golangci-lint];
+    nativeBuildInputs = with pkgs; [
+      go
+      gotools
+      golangci-lint
+    ];
   }
