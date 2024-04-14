@@ -6,6 +6,7 @@
     ../common/global
     ../common/users/averagebit
 
+    ../common/optional/docker.nix
     ../common/optional/greetd.nix
     ../common/optional/libvirtd.nix
     ../common/optional/opencl.nix

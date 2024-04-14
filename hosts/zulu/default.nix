@@ -7,6 +7,7 @@
     ../common/users/guest
 
     ../common/optional/dconf.nix
+    ../common/optional/docker.nix
     ../common/optional/gamemode.nix
     ../common/optional/greetd.nix
     ../common/optional/opengl.nix
