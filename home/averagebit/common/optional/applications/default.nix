@@ -8,6 +8,7 @@
     ./qjackctl
     ./reaper
     ./slack
+    ./spotify
     ./virt-manager
     ./vscode
   ];
