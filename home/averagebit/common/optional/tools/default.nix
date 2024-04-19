@@ -9,7 +9,6 @@
     ./gpg
     ./lazygit
     ./neovim
-    ./ollama
     ./openssh
     ./spleeter
     ./starship
