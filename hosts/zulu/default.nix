@@ -20,11 +20,6 @@
     ../common/optional/yubikey.nix
   ];
 
-  networking = {
-    hostName = "zulu";
-    networkmanager.enable = true;
-  };
-
   security = {
     rtkit.enable = true;
     polkit.enable = true;

@@ -21,11 +21,6 @@
     ../common/optional/yubikey.nix
   ];
 
-  networking = {
-    hostName = "wopr";
-    useDHCP = true;
-  };
-
   security = {
     rtkit.enable = true;
     polkit.enable = true;

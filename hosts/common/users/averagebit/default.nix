@@ -25,6 +25,7 @@ in {
         "libvirtd"
         "minecraft"
         "mysql"
+        "network"
         "podman"
         "wireshark"
       ];

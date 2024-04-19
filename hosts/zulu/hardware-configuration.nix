@@ -55,6 +55,11 @@
     }
   ];
 
+  networking = {
+    hostName = "zulu";
+    networkmanager.enable = true;
+  };
+
   nixpkgs.hostPlatform.system = "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = true;
 }
