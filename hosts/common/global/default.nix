@@ -52,6 +52,7 @@
       lm_sensors # Hardware sensors
       lshw # Hardware management
       lsof # Tool to list open files
+      mtpfs # FUSE Filesystem providing access to MTP devices
       nix-index # Nix file database
       nix-tree # Nix store explorer
       p7zip # 7-Zip archive management
