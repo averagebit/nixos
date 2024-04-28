@@ -45,6 +45,12 @@
     options = ["subvol=@" "compress=zstd"];
   };
 
+  fileSystems."/media/dev" = {
+    device = "dev:/averagebit";
+    fsType = "nfs";
+    options = ["x-systemd.automount" "x-systemd.idle-timeout=600" "noauto"];
+  };
+
   swapDevices = [
     {
       device = "/swap/swapfile";
