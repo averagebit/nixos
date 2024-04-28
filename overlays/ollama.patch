@@ -1,0 +1,12 @@
+diff --git a/gpu/amd_linux.go b/gpu/amd_linux.go
+index b83f8a6..17bbf47 100644
+--- a/gpu/amd_linux.go
++++ b/gpu/amd_linux.go
+@@ -213,6 +213,7 @@ func amdProcMemLookup(resp *GpuInfo, skip map[int]interface{}, ids []int) {
+                        skip[id] = struct{}{}
+                        continue
+                }
++               totalMemory = totalMemory * 16
+                if totalMemory < IGPUMemLimit {
+                        slog.Info(fmt.Sprintf("amdgpu [%d] appears to be an iGPU with %dM reported total memory, skipping", id, totalMemory/1024/1024))
+                        skip[id] = struct{}{}

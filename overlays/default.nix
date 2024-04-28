@@ -1,4 +1,9 @@
-{inputs, ...}: {
+{inputs, ...}: let
+  addPatches = pkg: patches:
+    pkg.overrideAttrs (oldAttrs: {
+      patches = (oldAttrs.patches or []) ++ patches;
+    });
+in {
   # For every flake input, aliases 'pkgs.inputs.${flake}' to
   # 'inputs.${flake}.packages.${pkgs.system}' or
   # 'inputs.${flake}.legacyPackages.${pkgs.system}'
@@ -13,7 +18,6 @@
     inputs;
   };
 
-  # additions = final: prev: import ../pkgs {pkgs = final;};
   additions = final: prev:
     import ../pkgs {pkgs = final;}
     // {
@@ -23,6 +27,21 @@
   modifications = final: prev: {
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
+    # });
+
+    # ollama = addPatches prev.ollama [./ollama.patch];
+
+    # ollama = prev.ollama.overrideAttrs (oldAttrs: rec {
+    #   version = "0.1.31";
+    #   src = final.fetchFromGitHub {
+    #     owner = "ollama";
+    #     repo = "ollama";
+    #     rev = "v${version}";
+    #     hash = "sha256-Ip1zrhgGpeYo2zsN206/x+tcG/bmPJAq4zGatqsucaw=";
+    #     fetchSubmodules = true;
+    #   };
+    #   vendorHash = "sha256-Lj7CBvS51RqF63c01cOCgY7BCQeCKGu794qzb/S80C0=";
+    #   patches = (oldAttrs.patches or []) ++ [./ollama.patch];
     # });
   };
 }
