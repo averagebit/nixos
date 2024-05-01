@@ -9,7 +9,6 @@
     ../common/optional/docker.nix
     ../common/optional/greetd.nix
     ../common/optional/libvirtd.nix
-    ../common/optional/opencl.nix
     ../common/optional/opengl.nix
     ../common/optional/podman.nix
   ];
