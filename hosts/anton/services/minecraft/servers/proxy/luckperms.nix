@@ -16,7 +16,7 @@
           address = "127.0.0.1";
           database = "minecraft";
           username = "minecraft";
-          password = "@DATABASE_PASSWORD@";
+          password = "@MINECRAFT_DATABASE_PASSWORD@";
           table-prefix = "luckperms_";
         };
         messaging-service = "sql";

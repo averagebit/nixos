@@ -17,7 +17,7 @@
     owner = "minecraft";
     group = "minecraft";
     mode = "0440";
-    # VELOCITY_FORWARDING_SECRET, DATABASE_PASSWORD
+    # MINECRAFT_VELOCITY_FORWARDING_SECRET, MINECRAFT_DATABASE_PASSWORD
     sopsFile = ../../secrets.yaml;
   };
 
@@ -44,7 +44,7 @@
     ${config.services.mysql.package}/bin/mysql <<EOF
       ALTER USER 'minecraft'@'localhost'
         IDENTIFIED VIA unix_socket OR mysql_native_password
-        USING PASSWORD('$DATABASE_PASSWORD');
+        USING PASSWORD('$MINECRAFT_DATABASE_PASSWORD');
     EOF
   '';
 }

@@ -15,7 +15,7 @@
       "config/FabricProxy-Lite.toml".value = {
         hackEarlySend = true;
         hackOnlineMode = false;
-        secret = "@VELOCITY_FORWARDING_SECRET@";
+        secret = "@MINECRAFT_VELOCITY_FORWARDING_SECRET@";
       };
       "config/luckperms/luckperms.conf".format = pkgs.formats.json {};
       "config/luckperms/luckperms.conf".value = {
@@ -25,7 +25,7 @@
           address = "127.0.0.1";
           database = "minecraft";
           username = "minecraft";
-          password = "@DATABASE_PASSWORD@";
+          password = "@MINECRAFT_DATABASE_PASSWORD@";
           table-prefix = "luckperms_";
         };
         messaging-service = "sql";

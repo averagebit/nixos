@@ -33,7 +33,7 @@ in {
         motd = "Nixcraft";
         player-info-forwarding-mode = "modern";
         forwarding-secret-file = "";
-        forwarding-secret = "@VELOCITY_FORWARDING_SECRET@";
+        forwarding-secret = "@MINECRAFT_VELOCITY_FORWARDING_SECRET@";
         online-mode = false;
         servers = {
           lobby = "localhost:${toString servers.lobby.serverProperties.server-port}";

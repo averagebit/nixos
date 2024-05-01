@@ -21,7 +21,7 @@ in {
           database = "minecraft";
           host = "localhost";
           max-life-time = 600000;
-          password = "@DATABASE_PASSWORD@";
+          password = "@MINECRAFT_DATABASE_PASSWORD@";
           port = 3306;
           user = "minecraft";
         };
