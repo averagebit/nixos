@@ -8,8 +8,15 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
+    systems.url = "github:nix-systems/default-linux";
     hardware.url = "github:nixos/nixos-hardware";
     impermanence.url = "github:nix-community/impermanence";
+
+    nix = {
+      url = "github:nixos/nix/2.22-maintenance";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -50,25 +57,28 @@
     self,
     nixpkgs,
     home-manager,
+    systems,
     ...
   } @ inputs: let
     inherit (self) outputs;
     lib = nixpkgs.lib // home-manager.lib;
-    systems = ["x86_64-linux"];
-    forEachSystem = f: lib.genAttrs systems (system: f pkgsFor.${system});
-    pkgsFor = lib.genAttrs systems (system:
-      import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      });
+    forEachSystem = f: lib.genAttrs (import systems) (system: f pkgsFor.${system});
+    pkgsFor = lib.genAttrs (import systems) (
+      system:
+        import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        }
+    );
   in {
     inherit lib;
-    devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
-    formatter = forEachSystem (pkgs: pkgs.alejandra);
-    homeManagerModules = import ./modules/home-manager;
     nixosModules = import ./modules/nixos;
-    overlays = import ./overlays {inherit inputs outputs;};
+    homeManagerModules = import ./modules/home-manager;
+
     packages = forEachSystem (pkgs: import ./pkgs {inherit pkgs;});
+    devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
+    overlays = import ./overlays {inherit inputs outputs;};
+    formatter = forEachSystem (pkgs: pkgs.alejandra);
     templates = import ./templates;
 
     nixosConfigurations = {
