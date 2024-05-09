@@ -13,7 +13,7 @@ in {
       auto-optimise-store = lib.mkDefault true;
       experimental-features = ["nix-command" "flakes"];
       warn-dirty = false;
-      system-features = ["kvm"];
+      system-features = ["kvm", "big-parallel"];
       flake-registry = "";
     };
     gc = {
