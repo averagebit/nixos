@@ -9,6 +9,7 @@ in {
   nix = {
     package = pkgs.inputs.nix.nix;
     settings = {
+      trusted-users = ["root" "@wheel"];
       allowed-users = ["root" "guest" "@wheel"];
       auto-optimise-store = lib.mkDefault true;
       experimental-features = ["nix-command" "flakes"];
