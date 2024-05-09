@@ -3,9 +3,11 @@
   lib,
   pkgs,
   ...
-}: {
+}: let
+  flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
+in {
   nix = {
-    package = pkgs.nixVersions.unstable;
+    package = pkgs.inputs.nix.nix;
     settings = {
       allowed-users = ["root" "guest" "@wheel"];
       auto-optimise-store = lib.mkDefault true;
@@ -22,10 +24,7 @@
 
     # Add each flake input as a registry
     # To make nix3 commands consistent with the flake
-    registry = lib.mapAttrs (_: value: {flake = value;}) inputs;
-
-    # Add nixpkgs input to NIX_PATH
-    # This lets nix2 commands still use <nixpkgs>
-    nixPath = ["nixpkgs=${inputs.nixpkgs.outPath}"];
+    registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
+    nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
   };
 }
