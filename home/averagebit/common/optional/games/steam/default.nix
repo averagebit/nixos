@@ -35,6 +35,7 @@ in {
         ".config/unity3d/IronGate/Valheim"
         ".local/share/Paradox Interactive"
         ".paradoxlauncher"
+        "Zomboid"
       ];
     };
   };
