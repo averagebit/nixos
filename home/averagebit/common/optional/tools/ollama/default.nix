@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: let
-  ollama = pkgs.ollama.override {acceleration = "rocm";};
+  # ollama = pkgs.ollama.override {acceleration = "rocm";};
 in {
   home.packages = with pkgs; [ollama rocmPackages.rocm-smi rocmPackages.rocminfo];
 
