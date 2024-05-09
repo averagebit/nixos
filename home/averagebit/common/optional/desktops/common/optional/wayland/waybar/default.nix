@@ -52,7 +52,7 @@ in {
         };
         "custom/menu" = {
           format = "";
-          # on-click = ''${pkgs.eww-wayland}/bin/eww open --toggle menu --screen 0'';
+          # on-click = ''${pkgs.eww}/bin/eww open --toggle menu --screen 0'';
           # on-click = ".config/wofi/power.sh";
           # on-click-right = "${pkgs.wofi}/bin/wofi --show drun";
           tooltip = false;
@@ -187,7 +187,7 @@ in {
         clock = {
           format = "{:%a %I:%M %p}";
           format-alt = "󱛡 {:%A, %B %d, %Y (%I:%M %p %Z)}";
-          on-click = "${pkgs.eww-wayland}/bin/eww open --toggle calendar --screen 0";
+          on-click = "${pkgs.eww}/bin/eww open --toggle calendar --screen 0";
         };
         cpu = {
           format = "{usage}% ";
