@@ -6,7 +6,7 @@
 }: let
   steam-app = "896660";
 in {
-  imports = [./steam.nix];
+  imports = [../steam];
 
   users.groups.valheim = {};
   users.users.valheim = {
@@ -60,7 +60,6 @@ in {
   ];
 
   networking.firewall = {
-    allowedTCPPorts = [2456];
-    allowedUDPPorts = [2456];
+    allowedUDPPorts = [2456, 2457];
   };
 }

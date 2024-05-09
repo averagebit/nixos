@@ -1,4 +1,3 @@
-# steam.nix
 {
   config,
   pkgs,
