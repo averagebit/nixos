@@ -18,14 +18,14 @@
   };
 
   home.packages = with pkgs; [
-    inputs.hyprwm-contrib.grimblast
+    pkgs.inputs.hyprwm-contrib.grimblast
     hyprpicker
   ];
 
   wayland.windowManager.hyprland = {
     enable = true;
-    package =
-      pkgs.inputs.hyprland.hyprland.override {wrapRuntimeDeps = false;};
+    package = pkgs.hyprland;
+
     systemd = {
       enable = true;
       extraCommands = lib.mkBefore [
@@ -145,7 +145,6 @@
         brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
         explorer = "${pkgs.xfce.thunar}/bin/thunar";
         grimblast = "${pkgs.inputs.hyprwm-contrib.grimblast}/bin/grimblast";
-        hyprctl = "${pkgs.inputs.hyprland.hyprland}/bin/hyprctl}";
         hyprpicker = "${pkgs.hyprpicker}/bin/hyprpicker";
         menu = "${pkgs.fuzzel}/bin/fuzzel";
         terminal = "${pkgs.foot}/bin/foot";
@@ -230,7 +229,6 @@
           "SUPER,E,exec, ${explorer}"
           "SUPER,D,exec, pkill fuzzel || ${menu}"
           "SUPER,c,exec,${hyprpicker} -a"
-          "SUPERSHIFT,C,exec,${hyprctl} reload"
 
           # Brightness
           ",XF86MonBrightnessDown,exec,${brightnessctl} set -5%"
