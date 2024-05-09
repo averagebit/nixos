@@ -35,5 +35,7 @@
     };
   };
 
+  systemd.services.NetworkManager-wait-online.enable = false;
+
   system.stateVersion = "23.11";
 }
