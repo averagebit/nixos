@@ -9,13 +9,18 @@
     ../common/optional/wayland
   ];
 
-  xdg.portal = {
-    extraPortals = [pkgs.inputs.hyprland.xdg-desktop-portal-hyprland];
-    # configPackages = [pkgs.inputs.hyprland.hyprland];
-    configPackages = [config.wayland.windowManager.hyprland.package];
+  xdg.portal = let
+    hyprland = config.wayland.windowManager.hyprland.package;
+    xdph = pkgs.xdg-desktop-portal-hyprland.override {inherit hyprland;};
+  in {
+    extraPortals = [xdph];
+    configPackages = [hyprland];
   };
 
-  home.packages = with pkgs; [inputs.hyprwm-contrib.grimblast hyprpicker];
+  home.packages = with pkgs; [
+    inputs.hyprwm-contrib.grimblast
+    hyprpicker
+  ];
 
   wayland.windowManager.hyprland = {
     enable = true;
