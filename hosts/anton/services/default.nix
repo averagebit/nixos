@@ -5,7 +5,8 @@
 
     ./factorio
     ./jellyfin
-    ./minecraft
+    # ./minecraft
     ./prometheus
+    ./valheim
   ];
 }
