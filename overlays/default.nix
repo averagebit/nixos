@@ -30,6 +30,8 @@ in {
     };
 
   modifications = final: prev: {
+    # example = addPatches prev.example [./example.patch];
+    #
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
