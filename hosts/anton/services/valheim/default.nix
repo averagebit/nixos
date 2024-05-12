@@ -33,7 +33,6 @@ in {
         "/var/lib/steam-app-${steam-app}/valheim_server.x86_64"
         "-nographics"
         "-batchmode"
-        # "-crossplay" # This is broken because it looks for "party" shared library in the wrong path.
         "-savedir"
         "/var/lib/valheim/save"
         "-name"
@@ -46,10 +45,11 @@ in {
         "0"
         "-backups"
         "0"
+        "-modifier"
+        "raids none"
       ];
     };
     environment = {
-      # LD_LIBRARY_PATH = "/var/lib/steam-app-${steam-app}/linux64:${pkgs.glibc}/lib";
       LD_LIBRARY_PATH = "/var/lib/steam-app-${steam-app}/linux64:${pkgs.libz}/lib:${pkgs.glibc}/lib";
       SteamAppId = "892970";
     };
@@ -60,6 +60,6 @@ in {
   ];
 
   networking.firewall = {
-    allowedUDPPorts = [2456, 2457];
+    allowedUDPPorts = [2456 2457];
   };
 }
