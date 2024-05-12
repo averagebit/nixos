@@ -11,7 +11,6 @@
     ../common/optional/gamemode.nix
     ../common/optional/greetd.nix
     ../common/optional/opengl.nix
-    ../common/optional/opencl.nix
     ../common/optional/pipewire.nix
     ../common/optional/podman.nix
     ../common/optional/steam-hardware.nix
