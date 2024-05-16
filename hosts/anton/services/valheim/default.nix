@@ -41,6 +41,8 @@ in {
         "2456"
         "-world"
         "Dedicated"
+        "-instanceid"
+        "nixheim-vanilla"
         "-public"
         "0"
         "-backups"
