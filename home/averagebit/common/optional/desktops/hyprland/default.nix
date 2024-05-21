@@ -44,7 +44,6 @@
         layout = "dwindle";
         resize_on_border = true;
         hover_icon_on_border = true;
-        cursor_inactive_timeout = 4;
         "col.active_border" = "0xff${colors.base0D}";
         "col.inactive_border" = "0xff${colors.base02}";
       };
