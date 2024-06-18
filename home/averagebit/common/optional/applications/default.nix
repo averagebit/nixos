@@ -5,6 +5,7 @@
     ./chrome
     ./discord
     ./easyeffects
+    ./obs
     ./qjackctl
     ./reaper
     ./slack
