@@ -3,15 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
     systems.url = "github:nix-systems/default-linux";
     hardware.url = "github:nixos/nixos-hardware";
     impermanence.url = "github:nix-community/impermanence";
-
-    nix = {
-      url = "github:nixos/nix/2.22-maintenance";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
-    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
