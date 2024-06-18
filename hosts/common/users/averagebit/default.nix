@@ -21,6 +21,7 @@ in {
         "video"
       ]
       ++ ifTheyExist [
+        "adbusers"
         "docker"
         "libvirtd"
         "minecraft"

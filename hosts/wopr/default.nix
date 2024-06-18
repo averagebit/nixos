@@ -5,6 +5,7 @@
     ../common/global
     ../common/users/averagebit
 
+    ../common/optional/adb.nix
     ../common/optional/dconf.nix
     ../common/optional/docker.nix
     ../common/optional/gamemode.nix
