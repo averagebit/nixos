@@ -9,7 +9,7 @@
     ./gpg
     ./lazygit
     ./neovim
-    ./ollama
+    # ./ollama
     ./openssh
     ./starship
     ./tmux
