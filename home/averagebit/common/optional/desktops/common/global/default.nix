@@ -9,6 +9,7 @@
     ./foot
     ./gammastep
     ./gtk
+    ./kdeconnect
     ./mpv
     ./playerctl
     ./qt
