@@ -9,11 +9,12 @@
     ./gpg
     ./lazygit
     ./neovim
-    # ./ollama
+    ./ollama
     ./openssh
     ./starship
     ./tmux
     ./weechat
+    ./yabridgectl
   ];
 
   home.packages = with pkgs; [
@@ -26,7 +27,7 @@
     nil # Nix LSP
     pfetch # System information
     python3Packages.huggingface-hub # Huggingface CLI
-    sst # SST AWS serverless dev stuff
+    # sst # SST AWS serverless dev stuff
     urlencode # URI encoder
     yank # copy utility
     yt-dlp # YouTube downloader
