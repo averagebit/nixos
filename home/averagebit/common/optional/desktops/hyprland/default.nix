@@ -37,6 +37,11 @@
     settings = with config.colorscheme; {
       exec = ["${pkgs.swaybg}/bin/swaybg -i ${config.wallpaper} --mode fill"];
 
+      monitor = ",1680x1050,auto,1";
+      # monitor = ",highres@highrr,0x0,1";
+      # monitor = ",highres,auto,1";
+      # monitor = ",preferred,auto,1";
+
       general = {
         gaps_in = 5;
         gaps_out = 10;

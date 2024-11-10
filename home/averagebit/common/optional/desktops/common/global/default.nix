@@ -4,7 +4,6 @@
   ...
 }: {
   imports = [
-    ./cursor
     ./firefox
     ./foot
     ./gammastep

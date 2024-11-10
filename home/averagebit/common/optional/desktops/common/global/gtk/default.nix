@@ -10,13 +10,18 @@
         variant = "mocha";
       };
     };
+    font = {
+      name = "sans-serif";
+      # size = 10;
+    };
     iconTheme = {
       name = "Papirus-Dark";
       package = pkgs.papirus-icon-theme;
     };
-    font = {
-      name = "sans-serif";
-      # size = 10;
+    cursorTheme = {
+      name = "macOS-BigSur";
+      package = pkgs.apple-cursor;
+      size = 24;
     };
   };
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];

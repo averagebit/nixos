@@ -24,6 +24,7 @@
         bitwarden
         darkreader
         ublock-origin
+        web-scrobbler
       ];
 
       search = {
