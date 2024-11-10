@@ -7,6 +7,7 @@
     systems.url = "github:nix-systems/default-linux";
     hardware.url = "github:nixos/nixos-hardware";
     impermanence.url = "github:nix-community/impermanence";
+    musnix.url = "github:musnix/musnix";
 
     home-manager = {
       url = "github:nix-community/home-manager";
