@@ -8,6 +8,7 @@
     ./obs
     ./qjackctl
     ./reaper
+    ./signal
     ./slack
     ./spotify
     ./virt-manager
