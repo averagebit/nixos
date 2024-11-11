@@ -13,6 +13,7 @@
     ./spotify
     ./virt-manager
     ./vscode
+    ./zap
   ];
 
   home.packages = with pkgs; [

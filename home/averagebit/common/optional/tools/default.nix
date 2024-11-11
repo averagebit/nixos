@@ -11,6 +11,7 @@
     ./neovim
     ./ollama
     ./openssh
+    ./shodan
     ./starship
     ./tmux
     ./weechat
