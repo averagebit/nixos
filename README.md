@@ -17,7 +17,7 @@ $ export HOST="hostname"
 $ export DRIVE="/dev/nvme0nX"
 
 # Pull in BTRFS dependencies
-$ nix-shell -p btrfs-progs
+$ nix-shell -p btrfs-progs ssh-to-age
 
 # Partition disk
 $ printf "label: gpt\n,1500M,U\n,,L\n" | sfdisk "$DRIVE"
@@ -41,7 +41,7 @@ $ cryptsetup luksOpen /dev/disk/by-label/"$HOST"_crypt "$HOST"
 $ mkfs.btrfs /dev/mapper/"$HOST" -L "$HOST"
 
 # Create BTRFS partition (if NOT encrypted)
-$ mkfs.btrfs "$DRIVE"p2/"$HOST" -L "$HOST"
+$ mkfs.btrfs "$DRIVE"p2 -L "$HOST"
 
 # Create BTRFS sub-volumes and a blank snapshot
 $ mkdir -p /mnt
@@ -63,15 +63,19 @@ $ mount -o noatime,subvol=@swap /dev/disk/by-label/"$HOST" /mnt/swap
 $ btrfs filesystem mkswapfile --size 8196M --uuid clear /mnt/swap/swapfile
 
 # Copy SSH keys to /persist (if using optin-persistence)
+$ mkdir -p /mnt/persist/etc/ssh
 $ cp -av /etc/ssh/ssh_host_rsa_key /mnt/persist/etc/ssh
 $ cp -av /etc/ssh/ssh_host_rsa_key.pub /mnt/persist/etc/ssh
 $ cp -av /etc/ssh/ssh_host_ed25519_key /mnt/persist/etc/ssh
 $ cp -av /etc/ssh/ssh_host_ed25519_key.pub /mnt/persist/etc/ssh
 
-# Generate hardware-configuration.nix (only for reference)
-$ nixos-generate-config --root /mnt
+# Update the `.sops.yaml` file with the age key for the machine.
+$ cat /mnt/persist/etc/ssh/ssh_host_ed25519_key.pub | ssh-to-age
 
-# Add the host's configuration and public key to the remote repository.
+# Add the host's public keys to the config repository and re-encrypt secrets.
+
+# Generate hardware-configuration.nix (only for reference if necessary)
+$ nixos-generate-config --root /mnt
 
 # Install NixOS
 $ nixos-install --root /mnt --flake https://github.com/averagebit/nixos#"$HOST"
