@@ -2,7 +2,7 @@ keys:
   - users:
       - &averagebit 3C960DA958B76348
   - hosts:
-      - &anton age17gn5ca5ud8gfn95wt6m28dwupty8qrzwrja089nehxym3j3crdwsjyakhp
+      - &anton age1hc2vjfy7m9u9xepqkr4rgktx5x8p3vwk9ptzywjpynqjjp0l25dqgyp6gm
       - &wopr age1asltlwmhw06kq4uk520306wpy4qgnm3x6d5rh0sca0xzyzkw447syydxry
       - &zulu age10e0zwkvdemyqvawl6zu4krslda5wjk297ahka9jq8agfw5qa99ssclzp5v
 
