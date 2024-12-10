@@ -13,6 +13,7 @@
     ./spotify
     ./virt-manager
     ./vscode
+    ./youtube-music
     ./zap
   ];
 
