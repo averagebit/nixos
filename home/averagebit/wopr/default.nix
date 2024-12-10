@@ -4,7 +4,6 @@
     ../common/optional/applications
     ../common/optional/desktops/hyprland
     ../common/optional/games
-    ../common/optional/security
     ../common/optional/tools
   ];
 
