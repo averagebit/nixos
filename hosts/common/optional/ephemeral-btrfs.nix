@@ -16,7 +16,7 @@
       mkdir -p "$MNTPOINT"/persist/var/{log,lib/{nixos,systemd}}
 
       echo "Cleaning root subvolume"
-      btrfs subvolume list -o "$MNTPOINT/@" | cut -f9 -d ' ' |
+      btrfs subvolume list -o "$MNTPOINT/@" | cut -f9 -d ' ' | sort |
       while read -r subvolume; do
         btrfs subvolume delete "$MNTPOINT/$subvolume"
       done && btrfs subvolume delete "$MNTPOINT/@"
