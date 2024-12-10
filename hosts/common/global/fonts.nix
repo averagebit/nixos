@@ -2,7 +2,8 @@
   fonts = {
     packages = with pkgs; [
       font-awesome
-      (nerdfonts.override {fonts = ["Hack" "Noto"];})
+      nerd-fonts.noto
+      nerd-fonts.hack
     ];
 
     fontconfig.defaultFonts = {
