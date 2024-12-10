@@ -17,6 +17,7 @@
     ../common/optional/steam-hardware.nix
     ../common/optional/thunar.nix
     ../common/optional/vial.nix
+    ../common/optional/waydroid.nix
     ../common/optional/wireshark.nix
     ../common/optional/yubikey.nix
   ];
