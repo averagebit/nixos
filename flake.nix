@@ -7,7 +7,6 @@
     systems.url = "github:nix-systems/default-linux";
     hardware.url = "github:nixos/nixos-hardware";
     impermanence.url = "github:nix-community/impermanence";
-    musnix.url = "github:musnix/musnix";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -17,7 +16,6 @@
     sops-nix = {
       url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nixpkgs-stable.follows = "nixpkgs";
     };
 
     hyprwm-contrib = {
