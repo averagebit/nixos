@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   imports = [
     ./bottles
-    ./carla
     ./chrome
     ./discord
     ./easyeffects
@@ -13,6 +12,7 @@
     ./spotify
     ./virt-manager
     ./vscode
+    ./webcord
     ./youtube-music
     ./zap
   ];
