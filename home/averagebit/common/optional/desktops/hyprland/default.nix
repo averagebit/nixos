@@ -9,16 +9,15 @@
     ../common/optional/wayland
   ];
 
-  xdg.portal = let
-    hyprland = config.wayland.windowManager.hyprland.package;
-    xdph = pkgs.xdg-desktop-portal-hyprland.override {inherit hyprland;};
-  in {
-    extraPortals = [xdph];
-    configPackages = [hyprland];
+  xdg.portal = {
+    extraPortals = [pkgs.xdg-desktop-portal-wlr];
+    config.hyprland = {
+      default = ["wlr" "gtk"];
+    };
   };
 
   home.packages = with pkgs; [
-    pkgs.inputs.hyprwm-contrib.grimblast
+    grimblast
     hyprpicker
   ];
 
@@ -91,7 +90,20 @@
         mouse_move_enables_dpms = true;
       };
 
+      workspace = [
+        "w[tv1], gapsout:0, gapsin:0"
+        "f[1], gapsout:0, gapsin:0"
+      ];
+
+      windowrulev2 = [
+        "bordersize 0, floating:0, onworkspace:w[tv1]"
+        "rounding 0, floating:0, onworkspace:w[tv1]"
+        "bordersize 0, floating:0, onworkspace:f[1]"
+        "rounding 0, floating:0, onworkspace:f[1]"
+      ];
+
       layerrule = ["blur,waybar" "ignorezero,waybar"];
+
       decoration = {
         active_opacity = 0.95;
         fullscreen_opacity = 1.0;
@@ -149,7 +161,7 @@
 
         brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
         explorer = "${pkgs.xfce.thunar}/bin/thunar";
-        grimblast = "${pkgs.inputs.hyprwm-contrib.grimblast}/bin/grimblast";
+        grimblast = "${pkgs.grimblast}/bin/grimblast";
         hyprpicker = "${pkgs.hyprpicker}/bin/hyprpicker";
         menu = "${pkgs.fuzzel}/bin/fuzzel";
         terminal = "${pkgs.foot}/bin/foot";
