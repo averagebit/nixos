@@ -28,15 +28,29 @@
             end
           end
 
+          add_lsp(lspconfig.ansiblels, {})
+          add_lsp(lspconfig.astro, {})
           add_lsp(lspconfig.bashls, {})
           add_lsp(lspconfig.clangd, {})
+          add_lsp(lspconfig.cssls, {})
+          add_lsp(lspconfig.cssmodules_ls, {})
+          add_lsp(lspconfig.dagger, {})
           add_lsp(lspconfig.dartls, {})
+          add_lsp(lspconfig.diagnosticls, {})
           add_lsp(lspconfig.dockerls, {})
+          add_lsp(lspconfig.emmet_ls, {})
+          add_lsp(lspconfig.eslint, {})
           add_lsp(lspconfig.gopls, {})
+          add_lsp(lspconfig.graphql, {})
           add_lsp(lspconfig.hls, {})
-          add_lsp(lspconfig.jdtls, {})
-          add_lsp(lspconfig.kotlin_language_server, {})
+          add_lsp(lspconfig.html, {})
+          add_lsp(lspconfig.jsonls, {})
           add_lsp(lspconfig.lua_ls, {})
+          add_lsp(lspconfig.prismals, {})
+          add_lsp(lspconfig.sqlls, {})
+          add_lsp(lspconfig.tailwindcss, {})
+          add_lsp(lspconfig.vimls, {})
+          add_lsp(lspconfig.yamlls, {})
           add_lsp(lspconfig.nixd, { settings = { nixd = {
             formatting = { command = { "alejandra" }}
           }}})
@@ -65,7 +79,6 @@
           }})
           add_lsp(lspconfig.ts_ls, {})
           add_lsp(lspconfig.tinymist, {})
-          add_lsp(lspconfig.elixirls, {cmd = {"elixir-ls"}})
         '';
     }
     {
@@ -86,4 +99,3 @@
     }
   ];
 }
-
