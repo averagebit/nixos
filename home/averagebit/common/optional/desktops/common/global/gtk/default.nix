@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, ...}: rec {
   gtk = {
     enable = true;
     theme = {
@@ -22,6 +22,13 @@
       name = "macOS-BigSur";
       package = pkgs.apple-cursor;
       size = 24;
+    };
+  };
+  services.xsettingsd = {
+    enable = true;
+    settings = {
+      "Net/ThemeName" = "${gtk.theme.name}";
+      "Net/IconThemeName" = "${gtk.iconTheme.name}";
     };
   };
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
