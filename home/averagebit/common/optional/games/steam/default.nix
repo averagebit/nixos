@@ -16,13 +16,11 @@
         stdenv.cc.cc.lib
         libkrb5
         keyutils
-        mangohud
       ];
   };
 in {
   home.packages = with pkgs; [
     gamescope
-    mangohud
     protontricks
     steam-with-pkgs
   ];
