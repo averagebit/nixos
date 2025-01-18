@@ -38,8 +38,5 @@ in {
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
-
-    # https://github.com/NixOS/nixpkgs/issues/313292
-    flutter = prev.flutter319;
   };
 }
