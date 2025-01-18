@@ -3,8 +3,13 @@
   pkgs,
   ...
 }: {
-  home.packages = with pkgs; [discord];
+  home.packages = with pkgs; [vesktop];
   home.persistence = {
-    "/persist/home/${config.home.username}".directories = [".config/discord"];
+    "/persist/${config.home.homeDirectory}" = {
+      directories = [
+        ".config/vesktop/sessionData"
+        ".config/vesktop/settings"
+      ];
+    };
   };
 }
