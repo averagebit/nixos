@@ -12,7 +12,6 @@
     ./spotify
     ./virt-manager
     ./vscode
-    ./webcord
     ./youtube-music
     ./zap
   ];
