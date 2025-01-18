@@ -1,4 +1,5 @@
 {pkgs ? import <nixpkgs> {}}: {
+  cam = pkgs.callPackage ./cam {};
   cheat = pkgs.callPackage ./cheat {};
   clone = pkgs.callPackage ./clone {};
   ix = pkgs.callPackage ./ix {};

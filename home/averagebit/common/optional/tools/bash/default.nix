@@ -16,6 +16,8 @@
     initExtra = ''
       umask 0027
 
+      source $HOME/documents/env
+
       export WORKSPACE="$HOME/workspace"
       export RECON="$WORKSPACE/recon"
       export REPOS="$WORKSPACE/repos"

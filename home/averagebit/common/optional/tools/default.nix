@@ -19,6 +19,8 @@
   ];
 
   home.packages = with pkgs; [
+    cam # Android cam setup wrapper
+    scrcpy # Mirror Android device
     cheat # cheat.sh browser
     clone # git clone wrapper
     distrobox # Podman wrapper for running other distros
