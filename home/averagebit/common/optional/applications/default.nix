@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   imports = [
-    ./bottles
     ./chrome
     ./discord
     ./easyeffects
