@@ -15,6 +15,7 @@
     ./starship
     ./tmux
     ./weechat
+    ./wine
     ./yabridgectl
   ];
 
