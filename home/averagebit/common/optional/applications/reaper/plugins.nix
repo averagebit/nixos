@@ -20,9 +20,20 @@
     VST3_PATH = makePluginPath "vst3";
   };
   home.packages = with pkgs; [
-    neural-amp-modeler-lv2
-    # neural-amp-modeler-ui
+    calf
+    chow-centaur
+    chow-kick
+    chow-phaser
+    chow-tape-model
+    guitarix
     gxplugins-lv2
+    neural-amp-modeler-lv2
+    odin2
+    plugdata
+    proteus
     surge-XT
+    tamgamp.lv2
+    vital
+    zam-plugins
   ];
 }
