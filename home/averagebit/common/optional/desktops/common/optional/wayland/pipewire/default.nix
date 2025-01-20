@@ -28,4 +28,33 @@
         }
     ]
   '';
+
+  home.file.".config/pipewire/jack.conf.d/10-reaper.conf".text = ''
+    jack.rules = [
+        {
+            matches = [
+                {
+                    application.process.binary = ".reaper-wrapped"
+                }
+            ]
+            actions = {
+                update-props = {
+                    node.latency = 128/48000
+                }
+            }
+        }
+        {
+            matches = [
+                {
+                    application.process.binary = "reaper"
+                }
+            ]
+            actions = {
+                update-props = {
+                    node.latency = 128/48000
+                }
+            }
+        }
+    ]
+  '';
 }
