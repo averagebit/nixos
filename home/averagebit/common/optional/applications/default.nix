@@ -5,6 +5,7 @@
     ./discord
     ./easyeffects
     ./obs
+    ./obsidian
     ./qjackctl
     ./reaper
     ./signal
