@@ -1,5 +1,4 @@
 {pkgs, ...}: {
-
   home = {
     sessionVariables = {EDITOR = "hx";};
     shellAliases = {vi = "hx";};
@@ -21,6 +20,7 @@
           select = "underline";
         };
         auto-save.focus-lost = true;
+        auto-format = true;
       };
     };
     languages = {
@@ -34,6 +34,62 @@
         {
           name = "go";
           formatter = {command = "gofumpt";};
+          auto-format = true;
+        }
+        {
+          name = "javascript";
+          formatter = {command = "prettierd";};
+          auto-format = true;
+        }
+        {
+          name = "typescript";
+          formatter = {command = "prettierd";};
+          auto-format = true;
+        }
+        {
+          name = "json";
+          formatter = {command = "prettierd";};
+          auto-format = true;
+        }
+        {
+          name = "jsx";
+          formatter = {command = "prettierd";};
+          auto-format = true;
+        }
+        {
+          name = "vue";
+          formatter = {command = "prettierd";};
+          auto-format = true;
+        }
+        {
+          name = "css";
+          formatter = {command = "prettierd";};
+          auto-format = true;
+        }
+        {
+          name = "scss";
+          formatter = {command = "prettierd";};
+          auto-format = true;
+        }
+        {
+          name = "markdown";
+          formatter = {command = "prettierd";};
+          auto-format = true;
+        }
+        {
+          name = "graphql";
+          formatter = {command = "prettierd";};
+          auto-format = true;
+        }
+        {
+          name = "yaml";
+          formatter = {command = "prettierd";};
+          auto-format = true;
+        }
+        {
+          name = "html";
+          formatter = {command = "prettierd";};
+          auto-format = true;
         }
       ];
     };
