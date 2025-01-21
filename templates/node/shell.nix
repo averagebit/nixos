@@ -6,6 +6,13 @@ in
       nodejs
       (npxAlias "tsc")
       (npxAlias "tsserver")
+      docker-compose-language-service
+      dockerfile-language-server-nodejs
+      marksman
+      taplo
+      typescript-language-server
+      vscode-langservers-extracted
+      yaml-language-server
     ];
     shellHook = ''
       npm install
