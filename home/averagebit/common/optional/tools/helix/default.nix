@@ -1,6 +1,9 @@
 {pkgs, ...}: {
 
-  home.sessionVariables = {EDITOR = "hx";};
+  home = {
+    sessionVariables = {EDITOR = "hx";};
+    shellAliases = {vi = "hx";};
+  };
   programs.helix = {
     enable = true;
     defaultEditor = true;
