@@ -4,7 +4,7 @@
 }:
 (pkgs.writeShellApplication {
   name = "scratch";
-  runtimeInputs = with pkgs; [hx];
+  runtimeInputs = with pkgs; [helix];
   text = builtins.readFile ./scratch.sh;
 })
 // {
