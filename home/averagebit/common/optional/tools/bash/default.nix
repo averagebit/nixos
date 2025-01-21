@@ -23,7 +23,7 @@
       export REPOS="$WORKSPACE/repos"
       export GHREPOS="$REPOS/github.com"
       export GLREPOS="$REPOS/gitlab.com"
-      export NOTES="$HOME/documents/notes"
+      export NOTES="$HOME/workspace/notes"
 
       export CDPATH=".:$REPOS:$GHREPOS:$GHREPOS/$USER:$GLREPOS:$GLREPOS/$USER:$WORKSPACE:$RECON:$HOME"
 
