@@ -27,6 +27,8 @@
     duck # Search duckduckgo
     ix # ix.io uploader
     myip # ip fetcher
+    nixd # Nix LSP
+    alejandra # Nix Formatter
     nh # Home manager and Nix wrapper
     open # Wrapper around xdg-open
     pfetch # System information

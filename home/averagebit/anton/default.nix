@@ -24,7 +24,6 @@
     myip # ip fetcher
     nh # Home manager and Nix wrapper
     nixd # Nix LSP
-    nixl # Nix LSP
     alejandra # Nix Formatter
     pfetch # System information
     urlencode # URI encoder
