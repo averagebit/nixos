@@ -7,8 +7,8 @@
     ./gh
     ./git
     ./gpg
+    ./helix
     ./lazygit
-    ./neovim
     ./ollama
     ./openssh
     ./shodan

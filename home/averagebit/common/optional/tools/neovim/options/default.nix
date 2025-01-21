@@ -1,7 +1,0 @@
-{
-  imports = [
-    ./autocmds
-    ./keymaps
-    ./options
-  ];
-}
