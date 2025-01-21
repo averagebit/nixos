@@ -20,6 +20,9 @@
       gnupg
       sops
       ssh-to-age
+
+      nixd
+      nil
     ];
   };
 }
