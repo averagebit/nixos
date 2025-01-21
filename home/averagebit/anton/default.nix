@@ -12,7 +12,6 @@
     ../common/optional/tools/git
     ../common/optional/tools/gpg
     ../common/optional/tools/lazygit
-    ../common/optional/tools/neovim
     ../common/optional/tools/openssh
     ../common/optional/tools/starship
     ../common/optional/tools/tmux

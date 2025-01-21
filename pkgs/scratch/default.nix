@@ -4,7 +4,7 @@
 }:
 (pkgs.writeShellApplication {
   name = "scratch";
-  runtimeInputs = with pkgs; [neovim];
+  runtimeInputs = with pkgs; [hx];
   text = builtins.readFile ./scratch.sh;
 })
 // {
