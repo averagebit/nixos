@@ -27,8 +27,12 @@
       language = [
         {
           name = "nix";
-          formatter.command = "${pkgs.alejandra}/bin/alejandra";
           language-servers = ["nixd" "nil"];
+          formatter = {command = "alejandra";};
+        }
+        {
+          name = "go";
+          formatter = {command = "gofumpt";};
         }
       ];
     };

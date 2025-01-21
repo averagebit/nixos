@@ -28,7 +28,6 @@
     ix # ix.io uploader
     myip # ip fetcher
     nh # Home manager and Nix wrapper
-    nil # Nix LSP
     open # Wrapper around xdg-open
     pfetch # System information
     python3Packages.huggingface-hub # Huggingface CLI

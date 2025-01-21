@@ -23,7 +23,9 @@
     ix # ix.io uploader
     myip # ip fetcher
     nh # Home manager and Nix wrapper
-    nil # Nix LSP
+    nixd # Nix LSP
+    nixl # Nix LSP
+    alejandra # Nix Formatter
     pfetch # System information
     urlencode # URI encoder
     yank # copy utility
