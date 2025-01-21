@@ -29,6 +29,7 @@
           name = "nix";
           language-servers = ["nixd" "nil"];
           formatter = {command = "alejandra";};
+          auto-format = true;
         }
         {
           name = "go";
