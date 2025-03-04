@@ -12,9 +12,7 @@
 
   xdg.portal = {
     extraPortals = [pkgs.xdg-desktop-portal-wlr];
-    config.hyprland = {
-      default = ["wlr" "gtk"];
-    };
+    config.hyprland = {default = ["wlr" "gtk"];};
   };
 
   home.packages = with pkgs; [
@@ -35,8 +33,13 @@
     };
 
     settings = with config.colorscheme; {
-      exec = ["${pkgs.swaybg}/bin/swaybg -i ${config.wallpaper} --mode fill"];
+      exec = [
+        "${pkgs.swaybg}/bin/swaybg -i ${config.wallpaper} --mode fill"
+        "hyprctl setcursor ${config.gtk.cursorTheme.name} ${toString config.gtk.cursorTheme.size}"
+      ];
+
       exec-once = ["hyprctl dispatch workspace 1"];
+
       monitor =
         map (m: "${m.name},${
           if m.enabled
@@ -48,6 +51,10 @@
       workspace = map (m: "name:${m.workspace},monitor:${m.name}") (
         lib.filter (m: m.enabled && m.workspace != null) config.monitors
       );
+
+      animations.enabled = false;
+
+      layerrule = ["blur,waybar" "ignorezero,waybar"];
 
       general = {
         gaps_in = 5;
@@ -62,7 +69,7 @@
 
       input = {
         kb_layout = "us,es";
-        kb_options = grp:shifts_toggle;
+        kb_options = "grp:shifts_toggle";
         follow_mouse = 1;
         repeat_rate = 40;
         repeat_delay = 240;
@@ -98,20 +105,6 @@
         mouse_move_enables_dpms = true;
       };
 
-      workspace = [
-        "w[tv1], gapsout:0, gapsin:0"
-        "f[1], gapsout:0, gapsin:0"
-      ];
-
-      windowrulev2 = [
-        "bordersize 0, floating:0, onworkspace:w[tv1]"
-        "rounding 0, floating:0, onworkspace:w[tv1]"
-        "bordersize 0, floating:0, onworkspace:f[1]"
-        "rounding 0, floating:0, onworkspace:f[1]"
-      ];
-
-      layerrule = ["blur,waybar" "ignorezero,waybar"];
-
       decoration = {
         active_opacity = 0.95;
         fullscreen_opacity = 1.0;
@@ -133,42 +126,18 @@
         };
       };
 
-      animations = {
-        enabled = true;
-        bezier = [
-          "easein,0.11, 0, 0.5, 0"
-          "easeout,0.5, 1, 0.89, 1"
-          "easeinback,0.36, 0, 0.66, -0.56"
-          "easeoutback,0.34, 1.56, 0.64, 1"
-        ];
-        animation = [
-          "windowsIn,1,2,easeoutback,slide"
-          "windowsOut,1,2,easeinback,slide"
-          "windowsMove,1,2,easeoutback"
-          # "workspaces,1,2,easeoutback,slide"
-          "workspaces,0"
-          "fadeIn,1,2,easeout"
-          "fadeOut,1,2,easein"
-          "fadeSwitch,1,2,easeout"
-          "fadeShadow,1,2,easeout"
-          "fadeDim,1,2,easeout"
-          "border,1,2,easeout"
-        ];
-      };
-
       bind = let
-        makoctl = "${config.services.mako.package}/bin/makoctl";
-        playerctl = "${config.services.playerctld.package}/bin/playerctl";
-        playerctld = "${config.services.playerctld.package}/bin/playerctld";
-        swaylock = "${config.programs.swaylock.package}/bin/swaylock";
-
-        brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
-        explorer = "${pkgs.xfce.thunar}/bin/thunar";
-        grimblast = "${pkgs.grimblast}/bin/grimblast";
-        hyprpicker = "${pkgs.hyprpicker}/bin/hyprpicker";
-        menu = "${pkgs.fuzzel}/bin/fuzzel";
-        terminal = "${pkgs.foot}/bin/foot";
-        wpctl = "${pkgs.wireplumber}/bin/wpctl";
+        brightnessctl = lib.getExe pkgs.brightnessctl;
+        explorer = lib.getExe pkgs.xfce.thunar;
+        grimblast = lib.getExe pkgs.grimblast;
+        hyprpicker = lib.getExe pkgs.hyprpicker;
+        makoctl = lib.getExe config.services.mako.package;
+        menu = lib.getExe pkgs.fuzzel;
+        playerctld = lib.getExe' config.services.playerctld.package "playerctld";
+        playerctl = lib.getExe' config.services.playerctld.package "playerctl";
+        swaylock = lib.getExe config.programs.swaylock.package;
+        terminal = lib.getExe pkgs.foot;
+        wpctl = lib.getExe' pkgs.wireplumber "wpctl";
       in
         [
           # Applications
