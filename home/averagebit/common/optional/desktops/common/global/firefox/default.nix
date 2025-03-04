@@ -14,13 +14,15 @@
     "x-scheme-handler/https" = ["firefox.desktop"];
   };
 
+  home.sessionVariables = {MOZ_ENABLE_WAYLAND = 1;};
+
   programs.firefox = {
     enable = true;
     profiles."${config.home.username}" = {
       name = "${config.home.username}";
       isDefault = true;
 
-      extensions = with pkgs.inputs.firefox-addons; [
+      extensions.packages = with pkgs.inputs.firefox-addons; [
         bitwarden
         darkreader
         ublock-origin
