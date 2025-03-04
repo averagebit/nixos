@@ -4,6 +4,7 @@
 
     ../common/global
     ../common/users/averagebit
+    ../common/users/guest
 
     ../common/optional/adb.nix
     ../common/optional/dconf.nix
