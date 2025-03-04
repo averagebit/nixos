@@ -36,11 +36,18 @@
 
     settings = with config.colorscheme; {
       exec = ["${pkgs.swaybg}/bin/swaybg -i ${config.wallpaper} --mode fill"];
+      exec-once = ["hyprctl dispatch workspace 1"];
+      monitor =
+        map (m: "${m.name},${
+          if m.enabled
+          then "${toString m.width}x${toString m.height}@${toString m.refreshRate},${m.position},1"
+          else "disable"
+        }")
+        config.monitors;
 
-      monitor = ",1680x1050,auto,1";
-      # monitor = ",highres@highrr,0x0,1";
-      # monitor = ",highres,auto,1";
-      # monitor = ",preferred,auto,1";
+      workspace = map (m: "name:${m.workspace},monitor:${m.name}") (
+        lib.filter (m: m.enabled && m.workspace != null) config.monitors
+      );
 
       general = {
         gaps_in = 5;
