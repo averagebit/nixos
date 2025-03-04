@@ -4,7 +4,6 @@
     ./bash
     ./btop
     ./direnv
-    ./distrobox
     ./fzf
     ./gh
     ./git
