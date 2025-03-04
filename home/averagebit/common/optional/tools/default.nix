@@ -9,12 +9,9 @@
     ./gpg
     ./helix
     ./lazygit
-    ./ollama
     ./openssh
-    ./shodan
     ./starship
     ./tmux
-    ./weechat
     ./wine
     ./yabridgectl
   ];
@@ -32,11 +29,10 @@
     nh # Home manager and Nix wrapper
     open # Wrapper around xdg-open
     pfetch # System information
-    python3Packages.huggingface-hub # Huggingface CLI
     scratch # Terminal scratchpad
     scrcpy # Mirror Android device
     urlencode # URI encoder
-    yank # copy utility
+    yank # Copy utility
     yt-dlp # YouTube downloader
   ];
 }
