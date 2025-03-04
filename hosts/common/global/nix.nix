@@ -8,7 +8,6 @@ in {
   nix = {
     settings = {
       trusted-users = ["root" "@wheel"];
-      allowed-users = ["root" "guest" "@wheel"];
       auto-optimise-store = lib.mkDefault true;
       experimental-features = ["nix-command" "flakes"];
       warn-dirty = false;
@@ -21,8 +20,7 @@ in {
       options = "--delete-older-than +3";
     };
 
-    # Add each flake input as a registry
-    # To make nix3 commands consistent with the flake
+    # Add each flake input as a registry and nix_path
     registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
   };

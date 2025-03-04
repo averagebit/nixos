@@ -1,17 +1,19 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{config, ...}: {
   imports = [./packages.nix];
 
-  users.groups.guest.gid = 1010;
+  users.mutableUsers = false;
   users.users.guest = {
-    uid = 1010;
     isNormalUser = true;
-    shell = pkgs.bash;
-    group = "guest";
-    extraGroups = ["users" "audio" "video"];
+    extraGroups = [
+      "video"
+      "audio"
+    ];
+    hashedPasswordFile = config.sops.secrets.guest-password.path;
+  };
+
+  sops.secrets.guest-password = {
+    sopsFile = ../../secrets.yaml;
+    neededForUsers = true;
   };
 
   environment.persistence = {
