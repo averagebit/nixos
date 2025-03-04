@@ -4,6 +4,8 @@
     ./bash
     ./btop
     ./direnv
+    ./distrobox
+    ./fzf
     ./gh
     ./git
     ./gpg
@@ -12,7 +14,6 @@
     ./openssh
     ./starship
     ./tmux
-    ./wine
     ./yabridgectl
   ];
 

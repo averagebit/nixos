@@ -62,7 +62,6 @@
       export SCREENRC="$XDG_CONFIG_HOME/screen/screenrc"
       export TERMINFO="$XDG_DATA_HOME/terminfo"
       export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
-      export WINEPREFIX="$XDG_DATA_HOME/wine/default"
       export WORKON_HOME="$XDG_DATA_HOME/virtualenvs"
       export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
 
