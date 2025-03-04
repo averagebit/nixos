@@ -17,6 +17,7 @@
     ../common/optional/podman.nix
     ../common/optional/steam-hardware.nix
     ../common/optional/thunar.nix
+    ../common/optional/v4l2loopback.nix
     ../common/optional/vial.nix
     ../common/optional/waydroid.nix
     ../common/optional/wireshark.nix
