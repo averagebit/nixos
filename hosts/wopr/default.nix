@@ -11,10 +11,10 @@
     ../common/optional/gamemode.nix
     ../common/optional/greetd.nix
     ../common/optional/libvirtd.nix
-    ../common/optional/music.nix
     ../common/optional/opengl.nix
     ../common/optional/pipewire.nix
     ../common/optional/podman.nix
+    ../common/optional/rt-audio.nix
     ../common/optional/steam-hardware.nix
     ../common/optional/thunar.nix
     ../common/optional/v4l2loopback.nix
