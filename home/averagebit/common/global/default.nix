@@ -36,7 +36,7 @@
   };
 
   home.persistence = {
-    "/persist/home/${config.home.username}" = {
+    "/persist/${config.home.homeDirectory}" = {
       allowOther = true;
       directories = [
         "desktop"
