@@ -1,15 +1,15 @@
 {
-  # Steam: Right-click game - Properties - Launch options: gamemoderun %command%
-  # Lutris: General Preferences - Enable Feral GameMode
-  #                             - Global options - Add Environment Variables: LD_PRELOAD=/nix/store/*-gamemode-*-lib/lib/libgamemodeauto.so
-  programs = {
-    gamemode = {
-      enable = true;
-      settings = {
-        general = {
-          renice = 10;
-          inhibit_screensaver = 0;
-        };
+  programs.gamemode = {
+    enable = true;
+    settings = {
+      general = {
+        softrealtime = "on";
+        inhibit_screensaver = 1;
+      };
+      gpu = {
+        apply_gpu_optimisations = "accept-responsibility";
+        gpu_device = 0;
+        amd_performance_level = "high";
       };
     };
   };
