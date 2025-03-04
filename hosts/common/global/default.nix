@@ -42,6 +42,7 @@
       exiftool # Image information
       ffmpeg-full # Audio and video processing
       file # File type information
+      gdu # Disk usage analyzer
       git # Version control
       glxinfo # Test utilities for OpenGL
       hdparm # Disk information
