@@ -2,7 +2,6 @@
   imports = [
     ./chrome
     ./discord
-    ./easyeffects
     ./obs
     ./obsidian
     ./qjackctl
@@ -11,15 +10,12 @@
     ./slack
     ./spotify
     ./virt-manager
-    ./vscode
     ./youtube-music
-    ./zap
   ];
 
   home.packages = with pkgs; [
     tagger
     vial
-    vlc
     yubioath-flutter
   ];
 }
