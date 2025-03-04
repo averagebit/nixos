@@ -22,6 +22,7 @@ in {
   home.packages = with pkgs; [
     gamescope
     protontricks
+    sc-controller
     steam-with-pkgs
   ];
   home.persistence = {

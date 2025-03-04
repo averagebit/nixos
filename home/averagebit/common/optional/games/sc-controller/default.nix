@@ -3,11 +3,11 @@
   pkgs,
   ...
 }: {
-  home.packages = with pkgs; [prismlauncher];
+  home.packages = with pkgs; [sc-controller];
   home.persistence = {
     "/persist/home/${config.home.username}" = {
       allowOther = true;
-      directories = [".local/share/PrismLauncher"];
+      directories = [".config/scc"];
     };
   };
 }
