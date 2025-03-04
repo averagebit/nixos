@@ -10,6 +10,7 @@
     ./git
     ./gpg
     ./helix
+    ./jira
     ./lazygit
     ./openssh
     ./starship
