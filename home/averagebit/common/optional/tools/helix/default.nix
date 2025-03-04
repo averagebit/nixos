@@ -73,7 +73,10 @@
         }
         {
           name = "markdown";
-          formatter = {command = "prettierd";};
+          formatter = {
+            command = "dprint";
+            args = ["fmt" "--stdin" "md"];
+          };
           auto-format = true;
         }
         {
