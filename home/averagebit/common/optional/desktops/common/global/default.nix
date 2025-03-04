@@ -13,6 +13,7 @@
     ./playerctl
     ./qt
     ./wallpapers
+    ./wireless
   ];
 
   xdg = {
