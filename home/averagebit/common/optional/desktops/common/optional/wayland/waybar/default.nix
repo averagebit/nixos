@@ -52,19 +52,11 @@ in {
         };
         "custom/menu" = {
           format = "";
-          # on-click = ''${pkgs.eww}/bin/eww open --toggle menu --screen 0'';
-          # on-click = ".config/wofi/power.sh";
-          # on-click-right = "${pkgs.wofi}/bin/wofi --show drun";
           tooltip = false;
         };
         "custom/notification" = {
           format = "";
           tooltip = false;
-        };
-        "wlr/workspaces" = {
-          format = "{name}";
-          active-only = false;
-          on-click = "activate";
         };
         "hyprland/workspaces" = {
           format = "{name}: {icon}";
@@ -91,6 +83,7 @@ in {
             "20" = "";
             "urgent" = "";
           };
+          sort-by = "number";
           on-scroll-up = "${pkgs.hyprland}/bin/hyprctl dispatch workspace e+1";
           on-scroll-down = "${pkgs.hyprland}/bin/hyprctl dispatch workspace e-1";
         };
@@ -101,6 +94,7 @@ in {
           rewrite = {
             "" = "󰋜  ";
             "(.*) - Discord" = "󰙯  $1";
+            "(.*) - Slack" = "  $1";
             "(.*) - Google Chrome" = "  $1";
             "(.*) - Obsidian.*" = "󰘝  $1";
             "(.*) - REAPER.*" = "󰎆  $1";
@@ -147,13 +141,7 @@ in {
             "urgent" = "";
           };
           all-outputs = true;
-          # persistent_workspaces = {
-          #   "1" = [ ];
-          #   "2" = [ ];
-          #   "3" = [ ];
-          #   "4" = [ ];
-          #   "5" = [ ];
-          # };
+          sort-by = "number";
         };
         "sway/scratchpad" = {
           format = "{icon}{count}";
@@ -169,6 +157,7 @@ in {
           rewrite = {
             "" = "󰋜  ";
             "(.*) - Discord" = "󰙯  $1";
+            "(.*) - Slack" = "  $1";
             "(.*) - Google Chrome" = "  $1";
             "(.*) - Obsidian.*" = "󰘝  $1";
             "(.*) - REAPER.*" = "󰎆  $1";
@@ -187,7 +176,6 @@ in {
         clock = {
           format = "{:%a %I:%M %p}";
           format-alt = "󱛡 {:%A, %B %d, %Y (%I:%M %p %Z)}";
-          on-click = "${pkgs.eww}/bin/eww open --toggle calendar --screen 0";
         };
         cpu = {
           format = "{usage}% ";
