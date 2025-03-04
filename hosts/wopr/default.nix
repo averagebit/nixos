@@ -11,6 +11,7 @@
     ../common/optional/docker.nix
     ../common/optional/gamemode.nix
     ../common/optional/greetd.nix
+    ../common/optional/ledger.nix
     ../common/optional/libvirtd.nix
     ../common/optional/opengl.nix
     ../common/optional/pipewire.nix
