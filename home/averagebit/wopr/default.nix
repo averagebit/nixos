@@ -24,6 +24,7 @@
       workspace = "20";
       refreshRate = 60;
       position = "auto-right";
+      enabled = true;
     }
   ];
 
