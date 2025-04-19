@@ -14,8 +14,6 @@
     "x-scheme-handler/https" = ["firefox.desktop"];
   };
 
-  home.sessionVariables = {MOZ_ENABLE_WAYLAND = 1;};
-
   programs.firefox = {
     enable = true;
     profiles."${config.home.username}" = {
@@ -61,7 +59,7 @@
           "Home Manager Options" = {
             urls = [
               {
-                template = "https://mipmip.github.io/home-manager-option-search/?query={searchTerms}";
+                template = "https://home-manager-options.extranix.com/?query={searchTerms}&release=master";
               }
             ];
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
@@ -74,176 +72,185 @@
         };
       };
 
-      bookmarks = [
-        {
-          name = "Local";
-          toolbar = false;
-          bookmarks = [
-            {
-              name = "Router";
-              tags = ["local"];
-              keyword = "router";
-              url = "https://router.home.arpa/";
-            }
-            {
-              name = "Wi-Fi";
-              tags = ["local"];
-              keyword = "wifi";
-              url = "https://wifi.home.arpa/";
-            }
-          ];
-        }
-        {
-          name = "Services";
-          toolbar = false;
-          bookmarks = [
-            {
-              name = "Discord";
-              tags = ["services"];
-              keyword = "discord";
-              url = "https://discord.com/app/";
-            }
-            {
-              name = "Twitch";
-              tags = ["services"];
-              keyword = "twitch";
-              url = "https://twitch.tv/";
-            }
-            {
-              name = "Docker";
-              tags = ["services"];
-              keyword = "docker";
-              url = "https://hub.docker.com/";
-            }
-            {
-              name = "ChatGPT";
-              tags = ["services"];
-              keyword = "gpt";
-              url = "https://chat.openai.com/";
-            }
-            {
-              name = "GitHub";
-              tags = ["services"];
-              keyword = "gh";
-              url = "https://github.com/";
-            }
-            {
-              name = "Wire";
-              tags = ["services"];
-              keyword = "wire";
-              url = "https://app.wire.com/";
-            }
-            {
-              name = "NPM";
-              tags = ["services"];
-              keyword = "npm";
-              url = "https://npmjs.com/";
-            }
-            {
-              name = "Proton";
-              tags = ["services"];
-              keyword = "mail";
-              url = "https://mail.proton.me/";
-            }
-            {
-              name = "Cloudflare";
-              tags = ["services"];
-              keyword = "cf";
-              url = "https://dash.cloudflare.com/";
-            }
-            {
-              name = "Figma";
-              tags = ["services"];
-              keyword = "figma";
-              url = "https://figma.com/files/";
-            }
-            {
-              name = "Chess";
-              tags = ["services"];
-              keyword = "chess";
-              url = "https://chess.com/";
-            }
-            {
-              name = "Lichess";
-              tags = ["services"];
-              keyword = "lichess";
-              url = "https://lichess.org/";
-            }
-            {
-              name = "Spotify";
-              tags = ["services"];
-              keyword = "spotify";
-              url = "https://open.spotify.com/";
-            }
-            {
-              name = "Languagetool";
-              tags = ["services"];
-              keyword = "languagetool";
-              url = "https://languagetool.org/";
-            }
-            {
-              name = "Phind";
-              tags = ["services"];
-              keyword = "phind";
-              url = "https://phind.com/";
-            }
-            {
-              name = "Shodan";
-              tags = ["services"];
-              keyword = "shodan";
-              url = "https://shodan.io/";
-            }
-            {
-              name = "Greynoise";
-              tags = ["services"];
-              keyword = "greynoise";
-              url = "https://greynoise.io/";
-            }
-            {
-              name = "DNS Leak Test";
-              tags = ["services"];
-              keyword = "dnsleak";
-              url = "https://dnsleaktest.com/";
-            }
-            {
-              name = "Reddit";
-              tags = ["services"];
-              keyword = "reddit";
-              url = "https://reddit.com/";
-            }
-            {
-              name = "Google";
-              tags = ["services"];
-              keyword = "google";
-              url = "https://google.com/";
-            }
-            {
-              name = "YouTube";
-              tags = ["services"];
-              keyword = "yt";
-              url = "https://youtube.com/";
-            }
-            {
-              name = "DuckDuckGo";
-              tags = ["services"];
-              keyword = "ddg";
-              url = "https://duckduckgo.com/";
-            }
-            {
-              name = "Notion";
-              tags = ["services"];
-              keyword = "notion";
-              url = "https://notion.so/";
-            }
-            {
-              name = "Twitter";
-              tags = ["services"];
-              keyword = "x";
-              url = "https://twitter.com/";
-            }
-          ];
-        }
-      ];
+      bookmarks = {
+        force = true;
+        settings = [
+          {
+            name = "Local";
+            toolbar = false;
+            bookmarks = [
+              {
+                name = "Router";
+                tags = ["local"];
+                keyword = "router";
+                url = "https://router.home.arpa/";
+              }
+              {
+                name = "Wi-Fi";
+                tags = ["local"];
+                keyword = "wifi";
+                url = "https://wifi.home.arpa/";
+              }
+            ];
+          }
+          {
+            name = "Services";
+            toolbar = false;
+            bookmarks = [
+              {
+                name = "Discord";
+                tags = ["services"];
+                keyword = "discord";
+                url = "https://discord.com/app/";
+              }
+              {
+                name = "Twitch";
+                tags = ["services"];
+                keyword = "twitch";
+                url = "https://twitch.tv/";
+              }
+              {
+                name = "Docker";
+                tags = ["services"];
+                keyword = "docker";
+                url = "https://hub.docker.com/";
+              }
+              {
+                name = "ChatGPT";
+                tags = ["services"];
+                keyword = "gpt";
+                url = "https://chat.openai.com/";
+              }
+              {
+                name = "GitHub";
+                tags = ["services"];
+                keyword = "gh";
+                url = "https://github.com/";
+              }
+              {
+                name = "Wire";
+                tags = ["services"];
+                keyword = "wire";
+                url = "https://app.wire.com/";
+              }
+              {
+                name = "NPM";
+                tags = ["services"];
+                keyword = "npm";
+                url = "https://npmjs.com/";
+              }
+              {
+                name = "Proton";
+                tags = ["services"];
+                keyword = "pmail";
+                url = "https://mail.proton.me/";
+              }
+              {
+                name = "Gmail";
+                tags = ["services"];
+                keyword = "mail";
+                url = "https://mail.google.com/";
+              }
+              {
+                name = "Cloudflare";
+                tags = ["services"];
+                keyword = "cf";
+                url = "https://dash.cloudflare.com/";
+              }
+              {
+                name = "Figma";
+                tags = ["services"];
+                keyword = "figma";
+                url = "https://figma.com/files/";
+              }
+              {
+                name = "Chess";
+                tags = ["services"];
+                keyword = "chess";
+                url = "https://chess.com/";
+              }
+              {
+                name = "Lichess";
+                tags = ["services"];
+                keyword = "lichess";
+                url = "https://lichess.org/";
+              }
+              {
+                name = "Spotify";
+                tags = ["services"];
+                keyword = "spotify";
+                url = "https://open.spotify.com/";
+              }
+              {
+                name = "Languagetool";
+                tags = ["services"];
+                keyword = "languagetool";
+                url = "https://languagetool.org/";
+              }
+              {
+                name = "Phind";
+                tags = ["services"];
+                keyword = "phind";
+                url = "https://phind.com/";
+              }
+              {
+                name = "Shodan";
+                tags = ["services"];
+                keyword = "shodan";
+                url = "https://shodan.io/";
+              }
+              {
+                name = "Greynoise";
+                tags = ["services"];
+                keyword = "greynoise";
+                url = "https://greynoise.io/";
+              }
+              {
+                name = "DNS Leak Test";
+                tags = ["services"];
+                keyword = "dnsleak";
+                url = "https://dnsleaktest.com/";
+              }
+              {
+                name = "Reddit";
+                tags = ["services"];
+                keyword = "reddit";
+                url = "https://reddit.com/";
+              }
+              {
+                name = "Google";
+                tags = ["services"];
+                keyword = "google";
+                url = "https://google.com/";
+              }
+              {
+                name = "YouTube";
+                tags = ["services"];
+                keyword = "yt";
+                url = "https://youtube.com/";
+              }
+              {
+                name = "DuckDuckGo";
+                tags = ["services"];
+                keyword = "ddg";
+                url = "https://duckduckgo.com/";
+              }
+              {
+                name = "Notion";
+                tags = ["services"];
+                keyword = "notion";
+                url = "https://notion.so/";
+              }
+              {
+                name = "Twitter";
+                tags = ["services"];
+                keyword = "x";
+                url = "https://twitter.com/";
+              }
+            ];
+          }
+        ];
+      };
 
       settings = {
         "app.normandy.api_url" = "";
