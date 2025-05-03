@@ -8,6 +8,6 @@
     };
   };
   home.persistence = {
-    "/persist/home/${config.home.username}".directories = [".config/gh"];
+    "/persist/${config.home.homeDirectory}".directories = [".config/gh"];
   };
 }

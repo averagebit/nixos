@@ -5,6 +5,6 @@
 }: {
   home.packages = with pkgs; [slack];
   home.persistence = {
-    "/persist/home/${config.home.username}".directories = [".config/Slack"];
+    "/persist/${config.home.homeDirectory}".directories = [".config/Slack"];
   };
 }

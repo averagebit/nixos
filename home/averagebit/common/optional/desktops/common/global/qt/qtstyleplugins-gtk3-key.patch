@@ -29,4 +29,3 @@ index cfd73a3..8aeeac9 100644
          return new QGtkStyle;
      return 0;
  }
-

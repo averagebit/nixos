@@ -5,7 +5,7 @@
 }: {
   home.packages = with pkgs; [prismlauncher];
   home.persistence = {
-    "/persist/home/${config.home.username}" = {
+    "/persist/${config.home.homeDirectory}" = {
       allowOther = true;
       directories = [".local/share/PrismLauncher"];
     };

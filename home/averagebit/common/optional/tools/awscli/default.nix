@@ -5,6 +5,6 @@
 }: {
   home.packages = with pkgs; [awscli2];
   home.persistence = {
-    "/persist/home/${config.home.username}".directories = [".config/aws"];
+    "/persist/${config.home.homeDirectory}".directories = [".config/aws"];
   };
 }

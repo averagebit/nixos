@@ -40,7 +40,7 @@
     ];
   in
     pkgs.writeTextDir "share/wayland-sessions/steam-sesson.desktop" # ini
-    
+
     ''
       [Desktop Entry]
       Name=Steam Session
@@ -55,7 +55,7 @@ in {
     steam-with-pkgs
   ];
   home.persistence = {
-    "/persist/home/${config.home.username}" = {
+    "/persist/${config.home.homeDirectory}" = {
       allowOther = true;
       directories = [
         ".local/share/Steam"

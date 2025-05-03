@@ -3,15 +3,11 @@
   pkgs,
   ...
 }: {
-  home.packages = with pkgs; [discord vesktop webcord-vencord];
+  home.packages = with pkgs; [vesktop];
   home.persistence = {
-    "/persist/${config.home.homeDirectory}" = {
-      directories = [
-        ".config/discord"
-        ".config/WebCord"
-        ".config/vesktop/sessionData"
-        ".config/vesktop/settings"
-      ];
-    };
+    "/persist/${config.home.homeDirectory}".directories = [
+      ".config/vesktop/sessionData"
+      ".config/vesktop/settings"
+    ];
   };
 }

@@ -27,6 +27,6 @@ in {
   };
 
   home.persistence = {
-    "/persist/home/${config.home.username}".directories = [".ssh"];
+    "/persist/${config.home.homeDirectory}".directories = [".ssh"];
   };
 }

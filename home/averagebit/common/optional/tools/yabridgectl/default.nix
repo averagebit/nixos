@@ -13,7 +13,7 @@
       WINEPREFIX = "/home/${config.home.username}/.local/share/wine/default";
     };
     persistence = {
-      "/persist/home/${config.home.username}".directories = [
+      "/persist/${config.home.homeDirectory}".directories = [
         ".config/yabridge"
         ".config/yabridgectl"
         ".local/share/wine"

@@ -5,9 +5,9 @@
   ...
 }: {
   imports = [./plugins.nix];
-  home.packages = with pkgs; [ reaper ];
+  home.packages = with pkgs; [reaper];
   home.persistence = {
-    "/persist/home/${config.home.username}".directories = [
+    "/persist/${config.home.homeDirectory}".directories = [
       ".local/share/daw"
       ".config/REAPER"
     ];

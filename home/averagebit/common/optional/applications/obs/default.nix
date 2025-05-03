@@ -5,6 +5,6 @@
 }: {
   home.packages = with pkgs; [obs-studio];
   home.persistence = {
-    "/persist/home/${config.home.username}".directories = [".config/obs-studio"];
+    "/persist/${config.home.homeDirectory}".directories = [".config/obs-studio"];
   };
 }

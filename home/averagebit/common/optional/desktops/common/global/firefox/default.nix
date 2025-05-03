@@ -4,7 +4,7 @@
   ...
 }: {
   home.persistence = {
-    "/persist/home/${config.home.username}".directories = [".mozilla/firefox"];
+    "/persist/${config.home.homeDirectory}".directories = [".mozilla/firefox"];
   };
 
   xdg.mimeApps.defaultApplications = {

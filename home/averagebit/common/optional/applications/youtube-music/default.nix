@@ -5,6 +5,6 @@
 }: {
   home.packages = with pkgs; [youtube-music];
   home.persistence = {
-    "/persist/home/${config.home.username}".directories = [".config/YouTube Music"];
+    "/persist/${config.home.homeDirectory}".directories = [".config/YouTube Music"];
   };
 }

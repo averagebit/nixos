@@ -6,6 +6,6 @@
   home.packages = with pkgs; [google-chrome];
 
   home.persistence = {
-    "/persist/home/${config.home.username}".directories = [".config/google-chrome"];
+    "/persist/${config.home.homeDirectory}".directories = [".config/google-chrome"];
   };
 }
