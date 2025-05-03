@@ -14,7 +14,6 @@
       height = 1080;
       workspace = "1";
       refreshRate = 100;
-      position = "0x0";
       primary = true;
     }
     {
@@ -23,7 +22,8 @@
       height = 1050;
       workspace = "20";
       refreshRate = 60;
-      position = "auto-right";
+      positionX = 1920;
+      positionY = 0;
       enabled = true;
     }
   ];

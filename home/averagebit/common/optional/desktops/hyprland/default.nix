@@ -43,7 +43,7 @@
       monitor =
         map (m: "${m.name},${
           if m.enabled
-          then "${toString m.width}x${toString m.height}@${toString m.refreshRate},${m.position},1"
+          then "${toString m.width}x${toString m.height}@${toString m.refreshRate},${toString m.positionX}x${toString m.positionY},1"
           else "disable"
         }")
         config.monitors;
