@@ -34,39 +34,16 @@ in {
   additions = final: prev:
     import ../pkgs {pkgs = final;}
     // {
+      # example = prev.example // import ../pkgs/example {pkgs = final;};
       formats = prev.formats // import ../pkgs/formats {pkgs = final;};
     };
 
   # Modify existing packages
-  modifications = final: prev: let
-    wine =
-      import
-      (fetchTarball {
-        url = "https://github.com/NixOS/nixpkgs/archive/da466ad.tar.gz";
-        sha256 = "04wc7l07f34aml0f75479rlgj85b7n7wy2mky1j8xyhadc2xjhv5";
-      }) {
-        system = final.system;
-        config = {};
-      };
-  in {
+  modifications = final: prev: {
     # example = addPatches prev.example [./example.patch];
     #
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
-
-    # https://github.com/NixOS/nixpkgs/issues/375460
-    wineWowPackages =
-      prev.wineWowPackages
-      // {
-        staging = wine.wineWowPackages.waylandFull;
-        stagingFull = wine.wineWowPackages.waylandFull;
-      };
-    yabridge = prev.yabridge.override {
-      wine = wine.wineWowPackages.waylandFull;
-    };
-    yabridgectl = prev.yabridgectl.override {
-      wine = wine.wineWowPackages.waylandFull;
-    };
   };
 }
