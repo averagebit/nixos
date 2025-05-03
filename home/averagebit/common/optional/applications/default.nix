@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./chrome
+    ./deluge
     ./discord
     ./ledger
     ./obs
