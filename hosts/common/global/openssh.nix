@@ -13,13 +13,14 @@ in {
     enable = true;
     allowSFTP = true;
     settings = {
+      AcceptEnv = "WAYLAND_DISPLAY";
       AuthenticationMethods = "publickey";
       GatewayPorts = "clientspecified";
       PasswordAuthentication = false;
       PermitRootLogin = "no";
       StreamLocalBindUnlink = "yes";
+      X11Forwarding = true;
     };
-
     hostKeys = [
       {
         path = "${lib.optionalString hasOptinPersistence "/persist"}/etc/ssh/ssh_host_ed25519_key";
@@ -38,6 +39,4 @@ in {
       })
       hosts;
   };
-
-  networking.firewall.allowedTCPPorts = [22];
 }
