@@ -10,10 +10,7 @@
     ./basic-binds.nix
   ];
 
-  xdg.portal = {
-    extraPortals = [pkgs.xdg-desktop-portal-wlr];
-    config.hyprland = {default = ["wlr" "gtk"];};
-  };
+  xdg.portal.config.hyprland = {default = ["wlr" "gtk"];};
 
   home.packages = with pkgs; [
     grimblast
