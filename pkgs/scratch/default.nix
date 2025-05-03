@@ -4,7 +4,7 @@
 }:
 (pkgs.writeShellApplication {
   name = "scratch";
-  runtimeInputs = with pkgs; [helix];
+  runtimeInputs = with pkgs; [neovim];
   text = builtins.readFile ./scratch.sh;
 })
 // {
@@ -18,4 +18,3 @@
     license = licenses.apache;
   };
 }
-
