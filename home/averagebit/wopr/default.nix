@@ -4,7 +4,6 @@
     ../common/optional/applications
     ../common/optional/desktops/sway
     ../common/optional/games
-    ../common/optional/tools
   ];
 
   monitors = [

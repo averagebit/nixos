@@ -8,14 +8,12 @@
     ./gh
     ./git
     ./gpg
-    ./helix
     ./jira
     ./lazygit
     ./neovim
     ./openssh
     ./starship
     ./tmux
-    ./yabridgectl
   ];
 
   home.packages = with pkgs; [
