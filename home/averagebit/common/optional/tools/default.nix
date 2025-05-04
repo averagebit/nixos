@@ -11,6 +11,7 @@
     ./helix
     ./jira
     ./lazygit
+    ./neovim
     ./openssh
     ./starship
     ./tmux

@@ -1,11 +1,11 @@
 {pkgs, ...}: {
   home = {
-    sessionVariables = {EDITOR = "hx";};
-    shellAliases = {vi = "hx";};
+    # sessionVariables = {EDITOR = "hx";};
+    # shellAliases = {vi = "hx";};
   };
   programs.helix = {
     enable = true;
-    defaultEditor = true;
+    # defaultEditor = true;
     settings = {
       theme = "catppuccin_mocha";
       editor = {

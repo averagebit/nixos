@@ -1,0 +1,22 @@
+{
+  imports = [
+    ./alpha
+    ./autopairs
+    ./cmp
+    ./colorscheme
+    ./comment
+    ./conform
+    ./devicons
+    ./gitsigns
+    ./illuminate
+    ./indentline
+    ./lsp
+    ./lualine
+    ./mason
+    ./nvimtree
+    ./project
+    ./telescope
+    ./treesitter
+    ./whichkey
+  ];
+}
