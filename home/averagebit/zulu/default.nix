@@ -2,7 +2,7 @@
   imports = [
     ../common/global
     ../common/optional/applications
-    ../common/optional/desktops/hyprland
+    ../common/optional/desktops/sway
     ../common/optional/games
     ../common/optional/tools
   ];

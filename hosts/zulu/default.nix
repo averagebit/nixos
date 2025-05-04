@@ -33,7 +33,7 @@
     restart = false;
     settings = {
       initial_session = {
-        command = "Hyprland";
+        command = "sway";
         user = "averagebit";
       };
     };
