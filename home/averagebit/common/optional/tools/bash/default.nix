@@ -10,13 +10,12 @@
       ls = "ls -lah --color";
       chmox = "chmod +x";
       temp = "cd $(mktemp -d)";
-      reload = "source $HOME/.bashrc";
     };
 
     initExtra = ''
       umask 0027
 
-      source $HOME/documents/env
+      [[ -f $XDG_CONFIG_HOME/env/bash ]] && source $XDG_CONFIG_HOME/env/bash
 
       export WORKSPACE="$HOME/workspace"
       export RECON="$WORKSPACE/recon"
