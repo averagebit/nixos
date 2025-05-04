@@ -19,6 +19,8 @@
   ];
 
   home.packages = with pkgs; [
+    alejandra # Nix Formatter
+    bash-language-server # Bash LSP
     cam # Android cam setup wrapper
     cheat # cheat.sh browser
     clone # git clone wrapper
@@ -26,9 +28,8 @@
     duck # Search duckduckgo
     ix # ix.io uploader
     myip # ip fetcher
-    nixd # Nix LSP
-    alejandra # Nix Formatter
     nh # Home manager and Nix wrapper
+    nixd # Nix LSP
     open # Wrapper around xdg-open
     pfetch # System information
     scratch # Terminal scratchpad

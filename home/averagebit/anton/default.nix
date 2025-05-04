@@ -18,13 +18,14 @@
   ];
 
   home.packages = with pkgs; [
+    alejandra # Nix Formatter
+    bash-language-server # Bash LSP
     cheat # cheat.sh browser
     clone # git clone wrapper
     ix # ix.io uploader
     myip # ip fetcher
     nh # Home manager and Nix wrapper
     nixd # Nix LSP
-    alejandra # Nix Formatter
     pfetch # System information
     urlencode # URI encoder
     yank # copy utility
