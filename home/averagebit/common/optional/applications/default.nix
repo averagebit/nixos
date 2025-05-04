@@ -1,13 +1,13 @@
 {pkgs, ...}: {
   imports = [
     ./chrome
+    ./daw
     ./deluge
     ./discord
     ./ledger
     ./obs
     ./obsidian
     ./qjackctl
-    ./reaper
     ./signal
     ./slack
     ./spotify

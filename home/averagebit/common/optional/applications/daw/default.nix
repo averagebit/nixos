@@ -1,10 +1,9 @@
 {
   config,
-  lib,
   pkgs,
   ...
 }: {
-  imports = [./plugins.nix];
+  imports = [./plugins.nix ./yabridge.nix];
   home.packages = with pkgs; [reaper];
   home.persistence = {
     "/persist/${config.home.homeDirectory}".directories = [
