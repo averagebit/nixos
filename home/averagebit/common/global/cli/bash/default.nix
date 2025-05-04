@@ -10,6 +10,7 @@
       ls = "ls -lah --color";
       chmox = "chmod +x";
       temp = "cd $(mktemp -d)";
+      ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
     };
 
     initExtra = ''
