@@ -22,6 +22,12 @@ in {
         # Mute mic
         {
           timeout = builtins.floor (6 * 42);
+          command = "${wpctl} set-mute @DEFAULT_AUDIO_SOURCE@ 1";
+          resumeCommand = "${wpctl} set-mute @DEFAULT_AUDIO_SOURCE@ 0";
+        }
+        # Mute audio
+        {
+          timeout = builtins.floor (6 * 42);
           command = "${wpctl} set-mute @DEFAULT_AUDIO_SINK@ 1";
           resumeCommand = "${wpctl} set-mute @DEFAULT_AUDIO_SINK@ 0";
         }
