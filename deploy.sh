@@ -3,6 +3,8 @@
 hosts="$1"
 shift
 
+setpci
+
 [[ -z "$hosts" ]] && { echo "No hosts to deploy"; exit 1; }
 
 for host in ${hosts//,/ }; do
