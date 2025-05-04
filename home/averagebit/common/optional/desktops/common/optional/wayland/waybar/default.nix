@@ -112,7 +112,8 @@ in {
         };
         "hyprland/language" = {
           format = "{}";
-          format-en = "";
+          format-us = "";
+          format-bg = "BG";
           format-es = "ES";
         };
         "sway/workspaces" = {
@@ -172,6 +173,9 @@ in {
             "Vial" = "󰌓 Vial";
             "[0-9]:[0-9]:(.*) -.*" = "󰞷  $1";
           };
+        };
+        "sway/language" = {
+          format = "{flag}";
         };
         clock = {
           format = "{:%a %I:%M %p}";
