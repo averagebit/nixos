@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./fuzzel
+    ./imv
     ./mako
     ./pipewire
     ./qpwgraph
