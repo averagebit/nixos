@@ -141,7 +141,7 @@ in {
             "20" = "";
             "urgent" = "";
           };
-          all-outputs = true;
+          all-outputs = false;
           sort-by = "number";
         };
         "sway/scratchpad" = {
