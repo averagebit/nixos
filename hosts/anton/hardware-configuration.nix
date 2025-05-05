@@ -11,13 +11,14 @@
   boot = {
     initrd = {
       availableKernelModules = [
-        "ehci_pci"
         "ahci"
-        "megaraid_sas"
-        "usbhid"
-        "usb_storage"
+        "ehci_pci"
+        "scsi_mod"
         "sd_mod"
         "sr_mod"
+        "sr_mod"
+        "usb_storage"
+        "usbhid"
       ];
       kernelModules = ["kvm-intel"];
     };
