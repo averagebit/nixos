@@ -2,6 +2,7 @@
   imports = [
     ./awscli
     ./jira
+    ./lynx
   ];
 
   home.packages = with pkgs; [
