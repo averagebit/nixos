@@ -9,11 +9,13 @@ open() {
         exec xdg-open "$@"
     elif exists /usr/bin/open; then
         exec /usr/bin/open "$@"
+    elif exists lynx; then
+        exec lynx "$@"
     fi
 }
 
 main() {
-    [[ -n "$1" ]] && open "$@"
+    [[ "$#" -gt 0 ]] && open "$@"
     if git -C . rev-parse; then
         local repo
         repo="$(git config --get remote.origin.url)"
