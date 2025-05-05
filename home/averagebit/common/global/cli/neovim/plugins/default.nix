@@ -6,6 +6,7 @@
     ./colorscheme
     ./comment
     ./conform
+    ./dap
     ./devicons
     ./gitsigns
     ./illuminate

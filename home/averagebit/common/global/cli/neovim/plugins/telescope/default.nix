@@ -8,6 +8,18 @@
         lua
         */
         ''
+          local wk = require "which-key"
+          wk.add {
+            { "<leader>b", "<cmd>Telescope buffers previewer=false<cr>", desc = "Open Buffer Picker" },
+            -- { "<leader>fb", "<cmd>Telescope git_branches<cr>", desc = "Checkout branch" },
+            { "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Open File Picker" },
+            { "<leader>p", "<cmd>lua require('telescope').extensions.projects.projects()<cr>", desc = "Open Projects Picker" },
+            { "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "Open Global Search" },
+            { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Open Command Palette" },
+            { "<leader>'", "<cmd>Telescope resume<cr>", desc = "Open Last Fuzzy Picker" },
+            -- { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent File" },
+          }
+
           local actions = require("telescope.actions")
 
           require("telescope").setup({

@@ -8,6 +8,12 @@
         lua
         */
         ''
+          local wk = require "which-key"
+          wk.add {
+            { "<leader>c", "<Plug>(comment_toggle_linewise_current)", desc = "(Un)comment selection" },
+            { "<leader>c", "<Plug>(comment_toggle_linewise_visual)", desc = "(Un)comment selection", mode = "v" },
+          }
+
           require("Comment").setup({
               ---Add a space b/w comment and the line
               padding = true,

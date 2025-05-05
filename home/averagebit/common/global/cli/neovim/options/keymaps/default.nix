@@ -37,22 +37,6 @@
           cnoreabbrev bD bd
       ]])
 
-      -- Open last file
-      map("n", "ga", "<cmd>e#<CR>", opts)
-
-      -- Navigate buffers
-      map("n", "<S-l>", "<cmd>bnext<CR>", opts)
-      map("n", "<S-h>", "<cmd>bprevious<CR>", opts)
-
-      -- Close buffers
-      map("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
-
-      -- Toggle editor's visual effects
-      map("n", "<CR>", "<cmd>let @/ = \'\'<CR><CR>", opts)
-
-      -- Clear highlights
-      map("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
-
       -- Yank to the end of the line
       map("n", "Y", "y$", opts)
 
@@ -71,52 +55,27 @@
       map("n", "<Left>", "<cmd>vertical resize -2<CR>", opts)
       map("n", "<Right>", "<cmd>vertical resize +2<CR>", opts)
 
-      -- Drag current line/s vertically and auto-indent
-      map("n", "<Leader>k", "<cmd>m-2<CR>", opts)
-      map("n", "<Leader>j", "<cmd>m+<CR>", opts)
-      map("v", "<Leader>k", "<cmd>m'<-2<CR>gv=gv", opts)
-      map("v", "<Leader>j", "<cmd>m'>+<CR>gv=gv", opts)
+      local wk = require "which-key"
+      wk.add {
+        -- Open last file
+        { "ga", "<cmd>e#<CR>", desc = "Open last file"},
 
-      -- Editor
-      map("n", "<leader>ts", "<cmd>setlocal spell!<CR>", opts)
-      map("n", "<leader>tl", "<cmd>setlocal nolist!<CR>", opts)
-      map("n", "<leader>tn", "<cmd>setlocal nonumber!<CR><cmd>setlocal rnu!<CR>", opts)
-      map("n", "<leader>tw", "<cmd>execute('setlocal wrap! breakindent! colorcolumn='. (&colorcolumn == \'\' ? &textwidth : \'\'))<CR>", opts)
+        -- Navigate buffers
+        { "gq", "<cmd>Bdelete!<cr>", desc = "Close buffer" },
+        { "gn", "<cmd>bnext<cr>", desc = "Open next buffer" },
+        { "gp", "<cmd>bprevious<cr>", desc = "Open previous buffer" },
 
-      -- Plugins --
+        -- Drag current line/s vertically and auto-indent
+        { "<leader>k", "<cmd>m-2<cr>", desc = "Drag line up" },
+        { "<leader>j", "<cmd>m+<cr>", desc = "Drag line down" },
+        { "<leader>k", "<cmd>m-2<cr>", desc = "Drag line up", mode = "v" },
+        { "<leader>j", "<cmd>m+<cr>", desc = "Drag line down", mode = "v" },
 
-      -- NvimTree
-      map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", opts)
-
-      -- Telescope
-      map("n", "<leader>f", "<cmd>Telescope find_files<CR>", opts)
-      map("n", "<leader>/", "<cmd>Telescope live_grep<CR>", opts)
-      -- map("n", "<leader>pj", "<cmd>Telescope projects<CR>", opts)
-      -- map("n", "<leader>pb", "<cmd>Telescope buffers<CR>", opts)
-
-      -- Comment
-      map("n", "<leader>c", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
-      map("x", "<leader>c", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts)
-
-      -- DAP
-      map("n", "<leader>dd", "<cmd>lua require'dapui'.toggle()<CR>", opts)
-      map("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
-      map("n", "<leader>dc", "<cmd>lua require'dap'.continue()<CR>", opts)
-      map("n", "<leader>di", "<cmd>lua require'dap'.step_into()<CR>", opts)
-      map("n", "<leader>do", "<cmd>lua require'dap'.step_over()<CR>", opts)
-      map("n", "<leader>dO", "<cmd>lua require'dap'.step_out()<CR>", opts)
-      map("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<CR>", opts)
-      map("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<CR>", opts)
-      map("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<CR>", opts)
-      map("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle({height = 14})<CR>", opts)
-
-      -- Gitsigns
-      map("n", "<leader>hp", "<cmd>lua require'gitsigns'.preview_hunk_inline()<CR>", opts)
-      map("n", "<leader>hP", "<cmd>lua require'gitsigns'.preview_hunk()<CR>", opts)
-      map("n", "<leader>hb", "<cmd>lua require'gitsigns'.blame_line()<CR>", opts)
-      map("n", "<leader>hB", "<cmd>lua require'gitsigns'.toggle_current_line_blame()<CR>", opts)
-
-      -- Lsp
-      map("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<CR>", opts)
+        -- Editor
+        { "<CR>", "<cmd>let @/ = \'\'<CR><CR>", desc = "Toggle visual effects" },
+        { "<leader>ts", "<cmd>setlocal spell!<cr>", desc = "Toggle spell checking" },
+        { "<leader>tn", "<cmd>setlocal nonumber!<CR><cmd>setlocal rnu!<CR>", desc = "Toggle line numbers" },
+        { "<leader>tw", "<cmd>execute('setlocal wrap! breakindent! colorcolumn='. (&colorcolumn == \'\' ? &textwidth : \'\'))<CR>", desc = "Toggle wrapping" },
+      }
     '';
 }
