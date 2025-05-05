@@ -17,7 +17,6 @@
         "scsi_mod"
         "sd_mod"
         "sr_mod"
-        "sr_mod"
         "usb_storage"
         "usbhid"
       ];
