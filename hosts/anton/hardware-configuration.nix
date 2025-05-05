@@ -13,6 +13,7 @@
       availableKernelModules = [
         "ahci"
         "ehci_pci"
+        "mpt3sas"
         "scsi_mod"
         "sd_mod"
         "sr_mod"
