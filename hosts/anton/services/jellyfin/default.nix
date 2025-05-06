@@ -1,23 +1,23 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
       intel-media-driver
-      vaapiIntel
+      intel-vaapi-driver
       vaapiVdpau
       libvdpau-va-gl
       intel-compute-runtime
+      vpl-gpu-rt
+      intel-media-sdk
     ];
   };
+  environment.sessionVariables = {LIBVA_DRIVER_NAME = "iHD";};
   services = {
     jellyfin = {
       enable = true;
       user = "jellyfin";
       group = "jellyfin";
+      cacheDir = "/var/lib/jellyfin/cache";
     };
     nginx.virtualHosts = {
       "tv.averagebit.com" = {
