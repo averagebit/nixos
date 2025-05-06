@@ -4,6 +4,7 @@
     ./daw
     ./deluge
     ./discord
+    ./jellyfin
     ./ledger
     ./obs
     ./obsidian
