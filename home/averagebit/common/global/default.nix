@@ -25,7 +25,10 @@
     username = lib.mkDefault "averagebit";
     homeDirectory = lib.mkDefault "/home/${config.home.username}";
     sessionPath = ["$HOME/.local/bin"];
-    sessionVariables = {FLAKE = "$HOME/workspace/nixos";};
+    sessionVariables = {
+      FLAKE = "$HOME/workspace/nixos";
+      NH_FLAKE = "$HOME/workspace/nixos";
+    };
   };
 
   home.persistence = {
