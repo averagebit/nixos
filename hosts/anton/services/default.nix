@@ -5,6 +5,7 @@
 
     ./jellyfin
     ./minecraft
+    ./playground
     ./prometheus
     ./valheim
   ];
