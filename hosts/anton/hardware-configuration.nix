@@ -1,6 +1,7 @@
 {
-  inputs,
+  lib,
   pkgs,
+  inputs,
   ...
 }: {
   imports = [
@@ -37,6 +38,12 @@
   fileSystems."/boot" = {
     device = "/dev/disk/by-label/ESP";
     fsType = "vfat";
+  };
+
+  fileSystems."/media/storage" = {
+    device = "/dev/disk/by-label/storage";
+    fsType = "btrfs";
+    options = ["subvol=@" "noatime" "compress=zstd"];
   };
 
   swapDevices = [
