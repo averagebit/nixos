@@ -98,7 +98,7 @@
           "$CARGO_HOME/bin" \
           "$GOBIN" \
           "$HOME/.local/bin" \
-          "$FLAKE/result/bin"
+          "$NH_FLAKE/result/bin"
 
       pathappend \
           /usr/local/sbin \
