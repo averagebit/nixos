@@ -100,15 +100,16 @@
       };
 
       keybindings = let
-        modifier = config.wayland.windowManager.sway.config.modifier;
         brightnessctl = lib.getExe pkgs.brightnessctl;
         explorer = lib.getExe pkgs.xfce.thunar;
-        grimblast = lib.getExe pkgs.grimblast;
+        grim = lib.getExe pkgs.grim;
         hyprpicker = lib.getExe pkgs.hyprpicker;
         makoctl = lib.getExe config.services.mako.package;
         menu = lib.getExe pkgs.fuzzel;
-        playerctld = lib.getExe' config.services.playerctld.package "playerctld";
+        modifier = config.wayland.windowManager.sway.config.modifier;
         playerctl = lib.getExe' config.services.playerctld.package "playerctl";
+        playerctld = lib.getExe' config.services.playerctld.package "playerctld";
+        slurp = lib.getExe pkgs.slurp;
         swaylock = lib.getExe config.programs.swaylock.package;
         terminal = lib.getExe pkgs.foot;
         wpctl = lib.getExe' pkgs.wireplumber "wpctl";
@@ -117,10 +118,10 @@
         "${modifier}+Shift+q" = "kill";
         "${modifier}+Return" = "exec ${terminal}";
         "${modifier}+d" = "exec ${menu}";
-        # "${modifier}+e" = "exec ${explorer}";
+        "${modifier}+e" = "exec ${explorer}";
         "${modifier}+c" = "exec ${hyprpicker} -a";
         # "${modifier}+l" = "exec ${swaylock}";
-        # "${modifier}+w" = "exec ${makoctl} dismiss";
+        "${modifier}+w" = "exec ${makoctl} dismiss";
 
         # Brightness
         "XF86MonBrightnessDown" = "exec ${brightnessctl} set -5%";
@@ -142,9 +143,7 @@
         "ALT+XF86AudioPlay" = "exec systemctl --user restart playerctld";
 
         # Screenshots
-        "Alt+p" = "exec ${grimblast} --notify --freeze copy active";
-        "Control+p" = "exec ${grimblast} --notify --freeze copy screen";
-        "${modifier}+p" = "exec ${grimblast} --notify --freeze copy area";
+        "${modifier}+p" = "exec ${grim} -g \"$(${slurp})\" - | wl-copy";
 
         # Focus window in {direction}
         "${modifier}+h" = "focus left";
@@ -215,9 +214,9 @@
         "${modifier}+v" = "splitv";
 
         # Switch the current container between different layout styles
-        "${modifier}+s" = "layout stacking";
-        "${modifier}+w" = "layout tabbed";
-        "${modifier}+e" = "layout toggle split";
+        # "${modifier}+s" = "layout stacking";
+        # "${modifier}+w" = "layout tabbed";
+        # "${modifier}+e" = "layout toggle split";
 
         # Toggle fullscreen for current focus
         "${modifier}+f" = "fullscreen";
