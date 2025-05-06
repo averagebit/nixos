@@ -11,7 +11,7 @@ in {
   users.groups.valheim = {};
   users.users.valheim = {
     isSystemUser = true;
-    home = "/var/lib/valheim";
+    home = "/srv/valheim";
     createHome = true;
     homeMode = "750";
     group = "valheim";
@@ -34,7 +34,7 @@ in {
         "-nographics"
         "-batchmode"
         "-savedir"
-        "/var/lib/valheim/save"
+        "/srv/valheim/save"
         "-name"
         "Nixheim"
         "-port"
@@ -58,7 +58,7 @@ in {
   };
 
   environment.persistence."/persist".directories = [
-    "/var/lib/valheim"
+    "/srv/valheim"
   ];
 
   networking.firewall = {

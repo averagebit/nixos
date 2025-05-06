@@ -1,13 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
-  environment.persistence."/persist".directories = [
-    "/var/lib/steam"
-  ];
-
+{pkgs, ...}: {
   users.groups.steam = {};
   users.users.steam = {
     isSystemUser = true;
@@ -71,4 +62,8 @@
       WorkingDirectory = "~";
     };
   };
+
+  environment.persistence."/persist".directories = [
+    "/var/lib/steam"
+  ];
 }
