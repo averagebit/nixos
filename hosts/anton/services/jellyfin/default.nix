@@ -31,6 +31,5 @@
   networking.firewall.allowedTCPPorts = [8096];
   environment.persistence."/persist".directories = [
     "/var/lib/jellyfin"
-    "/srv/files/media"
   ];
 }
