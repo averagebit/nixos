@@ -10,9 +10,9 @@
     config = {
       copy_torrent_file = true;
       move_completed = true;
-      torrentfiles_location = "/srv/torrents/files";
-      download_location = "/srv/torrents/downloading";
-      move_completed_path = "/srv/torrents/completed";
+      torrentfiles_location = "/media/storage/torrents/files";
+      download_location = "/media/storage/torrents/downloading";
+      move_completed_path = "/media/storage/torrents/completed";
       dont_count_slow_torrents = true;
       max_active_seeding = -1;
       max_active_limit = -1;
@@ -47,10 +47,7 @@
     ];
   };
 
-  environment.persistence = {
-    "/persist".directories = [
-      "/var/lib/deluge"
-      "/srv/torrents"
-    ];
-  };
+  environment.persistence."/persist".directories = [
+    "/var/lib/deluge"
+  ];
 }
