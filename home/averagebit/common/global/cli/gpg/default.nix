@@ -8,7 +8,7 @@
     enable = true;
     enableSshSupport = true;
     sshKeys = ["202C2696DF698259"];
-    pinentryPackage = pkgs.pinentry-curses;
+    pinentry.package = pkgs.pinentry-curses;
     enableExtraSocket = true;
   };
 
