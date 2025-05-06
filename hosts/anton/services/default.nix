@@ -5,6 +5,7 @@
 
     ./deluge
     ./file-server
+    ./grafana
     ./jellyfin
     ./minecraft
     ./playground
