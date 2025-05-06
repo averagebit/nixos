@@ -4,6 +4,7 @@
     ../../common/optional/nginx.nix
 
     ./jellyfin
+    ./minecraft
     ./prometheus
     ./valheim
   ];
