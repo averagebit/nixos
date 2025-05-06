@@ -15,6 +15,7 @@
       ./nix.nix
       ./openssh.nix
       ./optin-persistence.nix
+      ./prometheus-node-exporter.nix
       ./sops.nix
       ./sudo.nix
       ./tailscale.nix
