@@ -14,7 +14,7 @@
                   light = "latte",
                   dark = "mocha",
               },
-              transparent_background = false,
+              transparent_background = true,
               show_end_of_buffer = false,
               term_colors = false,
               compile = {
@@ -26,12 +26,19 @@
                   cmp = true,
                   gitsigns = true,
                   harpoon = true,
-                  illuminate = true,
+                  mason = true,
                   nvimtree = true,
-                  telescope = true,
                   treesitter = true,
                   treesitter_context = true,
                   which_key = true,
+                  telescope = {
+                      enabled = true
+                  },
+                  illuminate = {
+                      enabled = true,
+                      scope_color = "blue",
+                      lsp = false
+                  },
                   -- Special
                   indent_blankline = {
                       enabled = true,
@@ -48,12 +55,17 @@
                           hints = { "italic" },
                           warnings = { "italic" },
                           information = { "italic" },
+                          ok = { "italic" },
                       },
                       underlines = {
                           errors = { "underline" },
                           hints = { "underline" },
                           warnings = { "underline" },
                           information = { "underline" },
+                          ok = { "underline" },
+                      },
+                      inlay_hints = {
+                          background = true,
                       },
                   },
               },
