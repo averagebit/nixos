@@ -10,6 +10,7 @@
     ./lazygit
     ./neovim
     ./openssh
+    ./pfetch
     ./starship
     ./tmux
   ];
@@ -25,7 +26,6 @@
     nh # Home manager and Nix wrapper
     nix-search-tv # Fuzzy search for NixOS packages
     nixd # Nix LSP
-    pfetch # System information
     urlencode # URI encoder
   ];
 }
