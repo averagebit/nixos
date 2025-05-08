@@ -12,7 +12,7 @@
             formatters_by_ft = {
               bash = { "shfmt", lsp_format = "fallback" },
               cue = { "cueimports", lsp_format = "fallback" },
-              go = { "gofumpt", lsp_format = "fallback" },
+              go = { "goimports", "gofumpt", lsp_format = "fallback" },
               lua = { "stylua" },
               mksh = { "shfmt", lsp_format = "fallback" },
               nix = { "alejandra", lsp_format = "fallback" },
@@ -38,7 +38,7 @@
             },
             format_on_save = function(bufnr)
               -- Disable autoformat on certain filetypes
-              local ignore_filetypes = { "sql", "java" }
+              local ignore_filetypes = { "sql" }
               if vim.tbl_contains(ignore_filetypes, vim.bo[bufnr].filetype) then
                 return
               end
