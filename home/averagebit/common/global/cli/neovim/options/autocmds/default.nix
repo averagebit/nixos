@@ -36,6 +36,14 @@
         end,
       })
 
+      -- Show diagnostic tooltip automatically on CursorHold
+      vim.api.nvim_create_autocmd("CursorHold", {
+          pattern = "*",
+          callback = function()
+              vim.diagnostic.open_float(nil, { focusable = false })
+          end,
+      })
+
       -- Resize splits in all tabs
       vim.api.nvim_create_autocmd({ "VimResized" }, {
           callback = function()
