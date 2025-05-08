@@ -10,14 +10,14 @@
         ''
           local wk = require "which-key"
           wk.add {
-            { "<leader>Gb", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", desc = "Debug: Toggle Breakpoint" },
+            { "<leader>Gb", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", desc = "Debug: Toggle breakpoint" },
             { "<leader>Gc", "<cmd>lua require'dap'.continue()<cr>", desc = "Debug: Continue" },
-            { "<leader>Gi", "<cmd>lua require'dap'.step_into()<cr>", desc = "Debug: Step Into" },
-            { "<leader>Go", "<cmd>lua require'dap'.step_over()<cr>", desc = "Debug: Step Over" },
-            { "<leader>GO", "<cmd>lua require'dap'.step_out()<cr>", desc = "Debug: Step Out" },
-            { "<leader>Gl", "<cmd>lua require'dap'.run_last()<cr>", desc = "Debug: Run Last" },
-            { "<leader>Gt", "<cmd>lua require'dap'.terminate()<cr>", desc = "Debug: Terminate" },
-            { "<leader>Gr", "<cmd>lua require'dap'.repl.toggle({height = 14})<cr>", desc = "Debug: Toggle Repl" },
+            { "<leader>Gi", "<cmd>lua require'dap'.step_into()<cr>", desc = "Debug: Step into" },
+            { "<leader>Go", "<cmd>lua require'dap'.step_over()<cr>", desc = "Debug: Step over" },
+            { "<leader>GO", "<cmd>lua require'dap'.step_out()<cr>", desc = "Debug: Step out" },
+            { "<leader>Gl", "<cmd>lua require'dap'.run_last()<cr>", desc = "Debug: Run last" },
+            { "<leader>Gt", "<cmd>lua require'dap'.terminate()<cr>", desc = "Debug: terminate" },
+            { "<leader>Gr", "<cmd>lua require'dap'.repl.toggle({height = 14})<cr>", desc = "Debug: Toggle repl" },
           }
 
           local dap = require("dap")

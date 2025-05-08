@@ -10,14 +10,20 @@
         ''
           local wk = require "which-key"
           wk.add {
-            { "<leader>b", "<cmd>Telescope buffers previewer=false<cr>", desc = "Open Buffer Picker" },
-            -- { "<leader>fb", "<cmd>Telescope git_branches<cr>", desc = "Checkout branch" },
-            { "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Open File Picker" },
-            { "<leader>p", "<cmd>lua require('telescope').extensions.projects.projects()<cr>", desc = "Open Projects Picker" },
-            { "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "Open Global Search" },
-            { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Open Command Palette" },
-            { "<leader>'", "<cmd>Telescope resume<cr>", desc = "Open Last Fuzzy Picker" },
-            -- { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent File" },
+            { "<leader>'", "<cmd>Telescope resume<cr>", desc = "Open last fuzzy picker" },
+            { "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "Open global search" },
+            { "<leader>b", "<cmd>Telescope buffers previewer=false<cr>", desc = "Open buffer picker" },
+            { "<leader>d", "<cmd>lua require('telescope.builtin').diagnostics({ bufnr = 0 })<cr>", desc = "Open document diagnostics picker" },
+            { "<leader>D", "<cmd>Telescope diagnostics<cr>", desc = "Open workspace diagnostics picker" },
+            { "<leader>f", "<cmd>Telescope find_files<cr>", desc = "Open workspace file picker" },
+            { "<leader>F", "<cmd>lua require('telescope.builtin').find_files({ cwd = vim.fn.expand('%:p:h') })<cr>", desc = "Open current working directory file picker" },
+            { "<leader>j", "<cmd>Telescope jumplist<cr>", desc = "Open jumplist picker" },
+            { "<leader>p", "<cmd>lua require('telescope').extensions.projects.projects()<cr>", desc = "Open projects picker" },
+            { "<leader>s", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Open document symbol picker" },
+            { "<leader>S", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Open workspace symbol picker" },
+            { "gd", "<cmd>Telescope lsp_definitions()<cr>", desc = "Go to definition" },
+            { "gi", "<cmd>Telescope lsp_implementations()<cr>", desc = "Go to implementation" },
+            { "gr", "<cmd>Telescope lsp_references()<cr>", desc = "Open symbol references picker" },
           }
 
           local actions = require("telescope.actions")

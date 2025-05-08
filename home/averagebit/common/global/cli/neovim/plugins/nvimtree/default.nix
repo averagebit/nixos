@@ -10,7 +10,7 @@
         ''
           local wk = require "which-key"
           wk.add {
-            { "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "Toggle Explorer" },
+            { "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "Toggle explorer" },
           }
 
           local function my_on_attach(bufnr)

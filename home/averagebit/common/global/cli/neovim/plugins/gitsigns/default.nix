@@ -10,9 +10,9 @@
         ''
           -- local wk = require "which-key"
           -- wk.add {
-          --   { "<leader>a", "<cmd>lua require'gitsigns'.previw_hunk_inline()<cr>", desc = "Apply Code Action" },
-          --   { "<leader>A", "<cmd>lua require'gitsigns'.preview_hunk()<cr>", desc = "Apply Code Action", mode = "v" },
-          --   { "<leader>q", "<cmd>lua require'gitsigns'.blame_line()<cr>", desc = "Quickfix Code Action" },
+          --   { "<leader>a", "<cmd>lua require'gitsigns'.previw_hunk_inline()<cr>", desc = "Apply code action" },
+          --   { "<leader>A", "<cmd>lua require'gitsigns'.preview_hunk()<cr>", desc = "Apply code action", mode = "v" },
+          --   { "<leader>q", "<cmd>lua require'gitsigns'.blame_line()<cr>", desc = "Quickfix code action" },
           --   { "<leader>d", "<cmd>lua require'gitsigns'.toggle_current_line_blame()<cr>", desc = "Go to definition" },
           -- }
 

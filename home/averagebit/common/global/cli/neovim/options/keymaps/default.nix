@@ -37,9 +37,6 @@
           cnoreabbrev bD bd
       ]])
 
-      -- Yank to the end of the line
-      map("n", "Y", "y$", opts)
-
       -- Stay in indent mode
       map("v", "<", "<gv", opts)
       map("v", ">", ">gv", opts)
@@ -49,27 +46,12 @@
       map("n", "N", "Nzzzv", opts)
       map("n", "J", "mzJ`z", opts)
 
-      -- Resize with arrows
-      map("n", "<Up>", "<cmd>resize -2<CR>", opts)
-      map("n", "<Down>", "<cmd>resize +2<CR>", opts)
-      map("n", "<Left>", "<cmd>vertical resize -2<CR>", opts)
-      map("n", "<Right>", "<cmd>vertical resize +2<CR>", opts)
-
       local wk = require "which-key"
       wk.add {
-        -- Open last file
-        { "ga", "<cmd>e#<CR>", desc = "Open last file"},
-
-        -- Navigate buffers
-        { "gq", "<cmd>Bdelete!<cr>", desc = "Close buffer" },
-        { "gn", "<cmd>bnext<cr>", desc = "Open next buffer" },
-        { "gp", "<cmd>bprevious<cr>", desc = "Open previous buffer" },
-
-        -- Drag current line/s vertically and auto-indent
-        { "<leader>k", "<cmd>m-2<cr>", desc = "Drag line up" },
-        { "<leader>j", "<cmd>m+<cr>", desc = "Drag line down" },
-        { "<leader>k", "<cmd>m-2<cr>", desc = "Drag line up", mode = "v" },
-        { "<leader>j", "<cmd>m+<cr>", desc = "Drag line down", mode = "v" },
+        -- Navigation
+        { "ga", "<cmd>e#<CR>", desc = "Go to last accessed file"},
+        { "gn", "<cmd>bnext<cr>", desc = "Go to next buffer" },
+        { "gp", "<cmd>bprevious<cr>", desc = "Go to previous buffer" },
 
         -- Editor
         { "<CR>", "<cmd>let @/ = \'\'<CR><CR>", desc = "Toggle visual effects" },
