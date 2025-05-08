@@ -4,7 +4,7 @@
     ../../common/optional/nginx.nix
 
     ./deluge
-    ./file-server
+    # ./file-server
     ./grafana
     ./jellyfin
     ./minecraft
