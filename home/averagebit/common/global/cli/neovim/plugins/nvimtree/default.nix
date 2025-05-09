@@ -134,7 +134,7 @@
                   -- },
               },
               view = {
-                  width = 35,
+                  width = 32,
                   side = "right",
               },
           })
