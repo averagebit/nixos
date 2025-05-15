@@ -1,6 +1,6 @@
 {
-  pkgs,
   config,
+  pkgs,
   lib,
   ...
 }: {
@@ -8,9 +8,14 @@
     enable = true;
     enableSshSupport = true;
     sshKeys = ["202C2696DF698259"];
-    pinentry.package = pkgs.pinentry-curses;
     enableExtraSocket = true;
+    pinentry.package =
+      if config.gtk.enable
+      then pkgs.pinentry-gnome3
+      else pkgs.pinentry-tty;
   };
+
+  home.packages = lib.optional config.gtk.enable pkgs.gcr;
 
   programs = {
     bash.profileExtra = ''
