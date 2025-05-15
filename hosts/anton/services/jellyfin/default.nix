@@ -18,6 +18,7 @@
       user = "jellyfin";
       group = "jellyfin";
       cacheDir = "/var/lib/jellyfin/cache";
+      # openFirewall = true;
     };
     nginx.virtualHosts = {
       "tv.averagebit.com" = {
@@ -28,7 +29,6 @@
       };
     };
   };
-  networking.firewall.allowedTCPPorts = [8096];
   environment.persistence."/persist".directories = [
     "/var/lib/jellyfin"
   ];
