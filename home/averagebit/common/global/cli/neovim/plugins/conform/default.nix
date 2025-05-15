@@ -10,10 +10,10 @@
         ''
           require("conform").setup({
             formatters_by_ft = {
+              lua = { "stylua", lsp_format = "fallback" },
               bash = { "shfmt", lsp_format = "fallback" },
               cue = { "cueimports", lsp_format = "fallback" },
               go = { "goimports", "gofumpt", lsp_format = "fallback" },
-              lua = { "stylua" },
               mksh = { "shfmt", lsp_format = "fallback" },
               nix = { "alejandra", lsp_format = "fallback" },
               python = { "black", lsp_format = "fallback" },
@@ -55,22 +55,17 @@
               return { timeout_ms = 500, lsp_format = "fallback" }
             end,
           })
-          vim.api.nvim_create_user_command("FormatDisable", function(args)
+          vim.api.nvim_create_user_command("FormatToggle", function(args)
             if args.bang then
-              -- FormatDisable! will disable formatting just for this buffer
-              vim.b.disable_autoformat = true
+              vim.b.disable_autoformat = not vim.b.disable_autoformat
+              print("Document autoformat " .. (vim.b.disable_autoformat and "disabled" or "enabled"))
             else
-              vim.g.disable_autoformat = true
+              vim.g.disable_autoformat = not vim.g.disable_autoformat
+              print("Global autoformat " .. (vim.g.disable_autoformat and "disabled" or "enabled"))
             end
           end, {
-            desc = "Disable autoformat-on-save",
+            desc = "Toggle autoformat-on-save (use ! for buffer-local)",
             bang = true,
-          })
-          vim.api.nvim_create_user_command("FormatEnable", function()
-            vim.b.disable_autoformat = false
-            vim.g.disable_autoformat = false
-          end, {
-            desc = "Re-enable autoformat-on-save",
           })
         '';
     }

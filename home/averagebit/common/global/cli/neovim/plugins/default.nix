@@ -6,6 +6,7 @@
     ./colorscheme
     ./comment
     ./conform
+    ./copilot
     ./dap
     ./devicons
     ./gitsigns
