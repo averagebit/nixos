@@ -47,11 +47,13 @@ in {
       ];
     };
     nginx.virtualHosts = {
-      "metrics.averagebit.com" = {
+      "metrics.averagebit.com" = let
+        port = config.services.prometheus.port;
+      in {
         forceSSL = true;
         enableACME = true;
         acmeRoot = null;
-        locations."/".proxyPass = "http://localhost:${toString config.services.prometheus.port}";
+        locations."/".proxyPass = "http://localhost:${toString port}";
       };
     };
   };
