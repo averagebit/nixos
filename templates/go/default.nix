@@ -1,4 +1,7 @@
-{pkgs}:
+{
+  lib,
+  pkgs,
+}:
 pkgs.buildGoModule rec {
   pname = "foo";
   version = "0.1.0";
