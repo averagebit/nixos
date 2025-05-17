@@ -10,7 +10,7 @@
     ./lazygit
     ./neovim
     ./openssh
-    ./pfetch
+    ./nitch
     ./starship
     ./tmux
   ];
