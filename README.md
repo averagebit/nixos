@@ -25,10 +25,6 @@ Personal NixOS/Home Manager system configuration repository.
 
 The configuration is highly-opinionated whilst being modular in nature. As long as the secrets, filesystem and hardware configuration are taken into account properly other machines can be plugged in a straight forward manner. Below is an example of installing and applying the flake to a new machine with BTRFS, impermanence and (optional) encryption in mind. Server disks are not encrypted for obvious reasons.
 
-## 🖼️ Screenshots
-
-![wow-morelike-lol](https://i.imgur.com/MnU0plt.png)
-
 ## 🚀 Installation
 
 Partitioning, encryption and installation example.
@@ -107,6 +103,10 @@ $ nixos-generate-config --root /mnt
 # Install NixOS
 $ nixos-install --root /mnt --flake https://github.com/averagebit/nixos#"$HOST"
 ```
+
+## 🖼️ Screenshots
+
+![wow-morelike-lol](https://i.imgur.com/MnU0plt.png)
 
 ## 📃 License
 
