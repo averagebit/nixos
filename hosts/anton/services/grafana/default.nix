@@ -19,7 +19,7 @@
           cookie_secure = true;
         };
         "auth.anonymous" = {
-          enabled = true;
+          enabled = false;
         };
       };
       provision = {
