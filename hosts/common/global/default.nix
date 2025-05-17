@@ -32,6 +32,11 @@
     config.allowUnfree = true;
   };
 
+  networking = {
+    firewall.enable = true;
+    nftables.enable = true;
+  };
+
   hardware.enableRedistributableFirmware = true;
 
   environment = {
@@ -56,13 +61,17 @@
       inetutils # Network utilities
       inxi # System information
       iputils # Network utilities
+      jq # JSON CLI parser
       lazygit # TUI Git client
       lm_sensors # Hardware sensors
+      logrotate # Rotates and compresses system logs
       lshw # Hardware management
       lsof # Tool to list open files
       mtpfs # FUSE Filesystem providing access to MTP devices
+      netcat # TCP/IP swiss army knife
       nix-index # Nix file database
       nix-tree # Nix store explorer
+      nmap # Network scanner
       p7zip # 7-Zip archive management
       pciutils # PCI management
       ranger # File explorer
@@ -70,12 +79,15 @@
       rsync # Sync tool
       smartmontools # Disk management
       strace # Syscall diagnostic and debug tool
+      sysstat # Performance monitoring utilities
+      tcpdump # Network sniffer
       tmux # Terminal multiplexer
       tree # Depth indented dir listing
       unrar # Rar archive management
       unzip # Zip archive management
       usbutils # USB management
       vim # Text editor
+      yq # YAML CLI parser
       zip # Zip archive management
     ];
   };
