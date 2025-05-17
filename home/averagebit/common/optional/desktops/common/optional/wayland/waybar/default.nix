@@ -180,6 +180,10 @@ in {
         clock = {
           format = "{:%a %I:%M %p}";
           format-alt = "󱛡 {:%A, %B %d, %Y (%I:%M %p %Z)}";
+          on-click-left = "mode";
+          tooltip-format = ''
+            <big>{:%Y %B}</big>
+            <tt>{calendar}</tt>'';
         };
         cpu = {
           format = "{usage}% ";
@@ -197,8 +201,8 @@ in {
         backlight = {
           format = "{icon} {percent}%";
           format-icons = ["" ""];
-          on-scroll-down = "${pkgs.brightnessctl}/bin/brightnessctl set -5%";
-          on-scroll-up = "${pkgs.brightnessctl}/bin/brightnessctl set +5%";
+          on-scroll-down = "${lib.getExe pkgs.brightnessctl} set -5%";
+          on-scroll-up = "${lib.getExe pkgs.brightnessctl} set +5%";
         };
         battery = {
           interval = 60;
@@ -218,7 +222,7 @@ in {
           format-ethernet = "󰈀";
           format-linked = "󱘖 {ifname} (No IP)";
           format-disconnected = "󱘖 Not connected";
-          tooltip-format = "{essid} {ipaddr}/{cidr}";
+          tooltip-format = "{essid}{ifname} {ipaddr}/{cidr}";
         };
         pulseaudio = {
           format = "{format_source}  {icon}  {volume}%";
@@ -233,9 +237,9 @@ in {
           };
           tooltip-format = "{desc}, {volume}%";
           scroll-step = 5;
-          on-click = "${pkgs.pamixer}/bin/pamixer -t";
-          on-click-right = "${pkgs.pamixer}/bin/pamixer --default-source -t";
-          on-click-middle = "${pkgs.pavucontrol}/bin/pavucontrol";
+          on-click = "${lib.getExe pkgs.pamixer} -t";
+          on-click-right = "${lib.getExe pkgs.pamixer} --default-source -t";
+          on-click-middle = "${lib.getExe pkgs.pavucontrol}";
         };
         tray = {
           icon-size = 14;
