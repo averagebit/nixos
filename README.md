@@ -2,9 +2,36 @@
 
 # NixOS System Configuration
 
-## Installation
+Personal NixOS/Home Manager system configuration repository.
 
-### Partitioning and encrypting the disk
+## Table of Contents
+
+- [Overview](#-overview)
+- [Installation](#-installation)
+- [Screenshots](#-screenshots)
+- [License](#-license)
+
+## ☁️ Overview
+
+[NixOS](https://nixos.org/) is a declarative and reproducible Linux distribution that uses the Nix package manager to manage system configurations reliably and consistently. [Home Manager](https://github.com/nix-community/home-manager) extends this by providing a way to manage user-specific configurations using Nix, allowing seamless customization of dotfiles and applications across different systems.
+
+- **Modular Design** - Configurations are divided into small, mostly optional components, enabling precise customization for each machine’s unique needs.
+- **Self-Hosted** - Services configured in a fully-declarative manner.
+- **[BTRFS](https://btrfs.readthedocs.io/en/latest/)** – A single-partition, optionally encrypted, filesystem.
+- **Ephemeral State** - [Impermanence](https://github.com/nix-community/impermanence) ensures only user-defined directories and files persist across reboots.
+- **Secure Connectivity** - VPN and mesh-networked hosts streamlining testable access controls using [Tailscale](https://tailscale.com/).
+- **Secret Management** - User and service secrets are securely handled via [nix-sops](https://github.com/Mic92/sops-nix), encrypted using a PGP key (stored on a YubiKey) alongside the host system SSH keys.
+- **Machine Monitoring** - Leveraging [Prometheus](https://prometheus.io/docs/introduction/overview/) and [Grafana](https://grafana.com/) for basic machine monitoring.
+
+The configuration is highly-opinionated whilst being modular in nature. As long as the secrets, filesystem and hardware configuration are taken into account properly other machines can be plugged in a straight forward manner. Below is an example of installing and applying the flake to a new machine with BTRFS, impermanence and (optional) encryption in mind. Server disks are not encrypted for obvious reasons.
+
+## 🖼️ Screenshots
+
+![wow-morelike-lol](https://i.imgur.com/MnU0plt.png)
+
+## 🚀 Installation
+
+Partitioning, encryption and installation example.
 
 ```sh
 # List drives
@@ -80,3 +107,9 @@ $ nixos-generate-config --root /mnt
 # Install NixOS
 $ nixos-install --root /mnt --flake https://github.com/averagebit/nixos#"$HOST"
 ```
+
+## 📃 License
+
+This project is licensed under the **MIT license**. Feel free to edit and distribute as you like.
+
+See [LICENSE](https://github.com/averagebit/nixos/blob/main/LICENSE) for more information.
