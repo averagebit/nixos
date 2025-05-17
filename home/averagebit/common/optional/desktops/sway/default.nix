@@ -44,7 +44,7 @@
         "type:keyboard" = {
           xkb_layout = "us,bg";
           xkb_variant = ",phonetic";
-          xkb_options = "grp:shifts_toggle";
+          xkb_options = "grp:shifts_toggle,ctrl:nocaps";
           repeat_rate = "40";
           repeat_delay = "240";
         };
@@ -110,7 +110,7 @@
         playerctl = lib.getExe' config.services.playerctld.package "playerctl";
         playerctld = lib.getExe' config.services.playerctld.package "playerctld";
         slurp = lib.getExe pkgs.slurp;
-        swaylock = lib.getExe config.programs.swaylock.package;
+        # swaylock = lib.getExe config.programs.swaylock.package;
         terminal = lib.getExe pkgs.foot;
         wpctl = lib.getExe' pkgs.wireplumber "wpctl";
       in {
