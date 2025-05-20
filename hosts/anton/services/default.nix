@@ -5,7 +5,7 @@
 
     ./audiobookshelf
     ./deluge
-    # ./file-server
+    ./forgejo
     ./grafana
     ./jellyfin
     ./minecraft
