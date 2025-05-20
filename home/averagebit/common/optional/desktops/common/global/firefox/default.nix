@@ -33,41 +33,24 @@
         order = ["ddg"];
         engines = {
           "Nix Wiki" = {
-            urls = [{template = "https://nixos.wiki/index.php?search={searchTerms}";}];
-            icon = "https://nixos.wiki/favicon.png";
-            updateInterval = 24 * 60 * 60 * 1000;
+            urls = [{template = "https://wiki.nixos.org/w/index.php?search={searchTerms}";}];
+            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = ["@nw"];
           };
           "Nix Packages" = {
-            urls = [
-              {
-                template = "https://search.nixos.org/packages?channel=unstable&query={searchTerms}";
-              }
-            ];
+            urls = [{template = "https://search.nixos.org/packages?channel=unstable&query={searchTerms}";}];
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = ["@np"];
           };
           "Nix Options" = {
-            urls = [
-              {
-                template = "https://search.nixos.org/options?channel=unstable&query={searchTerms}";
-              }
-            ];
+            urls = [{template = "https://search.nixos.org/options?channel=unstable&query={searchTerms}";}];
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = ["@no"];
           };
           "Home Manager Options" = {
-            urls = [
-              {
-                template = "https://home-manager-options.extranix.com/?query={searchTerms}&release=master";
-              }
-            ];
+            urls = [{template = "https://home-manager-options.extranix.com/?query={searchTerms}&release=master";}];
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
             definedAliases = ["@ho"];
-          };
-          "Phind" = {
-            urls = [{template = "https://www.phind.com/search?q={searchTerms}";}];
-            definedAliases = ["@ph"];
           };
         };
       };
@@ -90,6 +73,36 @@
                 tags = ["local"];
                 keyword = "wifi";
                 url = "https://wifi.home.arpa/";
+              }
+            ];
+          }
+          {
+            name = "Self-Hosted";
+            toolbar = false;
+            bookmarks = [
+              {
+                name = "TV";
+                tags = ["services"];
+                keyword = "tv";
+                url = "https://tv.averagebit.com/";
+              }
+              {
+                name = "Books";
+                tags = ["services"];
+                keyword = "books";
+                url = "https://books.averagebit.com/";
+              }
+              {
+                name = "Git";
+                tags = ["services"];
+                keyword = "git";
+                url = "https://git.averagebit.com/";
+              }
+              {
+                name = "Grafana";
+                tags = ["services"];
+                keyword = "dash";
+                url = "https://dash.averagebit.com/";
               }
             ];
           }
@@ -186,12 +199,6 @@
                 tags = ["services"];
                 keyword = "languagetool";
                 url = "https://languagetool.org/";
-              }
-              {
-                name = "Phind";
-                tags = ["services"];
-                keyword = "phind";
-                url = "https://phind.com/";
               }
               {
                 name = "Shodan";
