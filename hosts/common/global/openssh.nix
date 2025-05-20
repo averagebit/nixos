@@ -13,13 +13,11 @@ in {
     enable = true;
     allowSFTP = true;
     settings = {
-      AcceptEnv = "WAYLAND_DISPLAY";
       AuthenticationMethods = "publickey";
       GatewayPorts = "clientspecified";
       PasswordAuthentication = false;
       PermitRootLogin = "no";
       StreamLocalBindUnlink = "yes";
-      X11Forwarding = true;
     };
     hostKeys = [
       {
