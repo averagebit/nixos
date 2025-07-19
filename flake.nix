@@ -70,6 +70,10 @@
         modules = [./hosts/zulu];
         specialArgs = {inherit inputs outputs;};
       };
+      office = lib.nixosSystem {
+        modules = [./hosts/office];
+        specialArgs = {inherit inputs outputs;};
+      };
     };
 
     homeConfigurations = {
@@ -85,6 +89,11 @@
       };
       "averagebit@zulu" = lib.homeManagerConfiguration {
         modules = [./home/averagebit/zulu];
+        extraSpecialArgs = {inherit inputs outputs;};
+        pkgs = pkgsFor.x86_64-linux;
+      };
+      "averagebit@office" = lib.homeManagerConfiguration {
+        modules = [./home/averagebit/office];
         extraSpecialArgs = {inherit inputs outputs;};
         pkgs = pkgsFor.x86_64-linux;
       };

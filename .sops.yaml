@@ -5,6 +5,7 @@ keys:
       - &anton age1mwp3ujlvhq7ssd0pxh8z45sp8lukmla2lkzy9x2pa7msa8x67y2st3guu6
       - &wopr age1asltlwmhw06kq4uk520306wpy4qgnm3x6d5rh0sca0xzyzkw447syydxry
       - &zulu age10e0zwkvdemyqvawl6zu4krslda5wjk297ahka9jq8agfw5qa99ssclzp5v
+      - &office age1rzdjquc868ylrwu9l0nyhlqy9uamxxymga88xyxu3gs267zcgp2qzu54lu
 
 creation_rules:
   - path_regex: hosts/common/secrets.ya?ml$
@@ -13,6 +14,7 @@ creation_rules:
           - *anton
           - *wopr
           - *zulu
+          - *office
         pgp:
           - *averagebit
 
