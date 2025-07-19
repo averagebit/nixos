@@ -8,7 +8,6 @@
       libvdpau-va-gl
       intel-compute-runtime
       vpl-gpu-rt
-      intel-media-sdk
     ];
   };
   environment.sessionVariables = {LIBVA_DRIVER_NAME = "iHD";};
