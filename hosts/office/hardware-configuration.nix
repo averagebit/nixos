@@ -1,13 +1,10 @@
 {
   inputs,
-  config,
   pkgs,
   ...
 }: {
   imports = [
     inputs.hardware.nixosModules.common-cpu-intel
-    inputs.hardware.nixosModules.common-pc-laptop
-    inputs.hardware.nixosModules.common-pc-laptop-ssd
 
     ../common/optional/encrypted-root.nix
     ../common/optional/ephemeral-btrfs.nix
@@ -45,7 +42,7 @@
   swapDevices = [
     {
       device = "/swap/swapfile";
-      size = 8196;
+      size = 2048;
     }
   ];
 
