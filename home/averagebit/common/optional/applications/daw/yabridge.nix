@@ -17,6 +17,7 @@
         ".config/yabridge"
         ".config/yabridgectl"
         ".local/share/wine"
+        ".vst"
         ".vst3"
       ];
     };
