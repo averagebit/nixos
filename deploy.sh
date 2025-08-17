@@ -9,5 +9,5 @@ shift
 }
 
 for host in ${hosts//,/ }; do
-    nixos-rebuild switch --flake .\#$host --build-host $host --target-host $host --use-remote-sudo --use-substitutes $@
+    nixos-rebuild switch --flake .\#$host --build-host $host --target-host $host --sudo --use-substitutes $@
 done
