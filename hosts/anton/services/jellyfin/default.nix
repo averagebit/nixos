@@ -24,7 +24,10 @@
         forceSSL = true;
         enableACME = true;
         acmeRoot = null;
-        locations."/".proxyPass = "http://localhost:8096";
+        locations."/" = {
+          proxyPass = "http://localhost:8096";
+          proxyWebsockets = true;
+        };
       };
     };
   };
