@@ -20,11 +20,13 @@
     VST3_PATH = makePluginPath "vst3";
   };
   home.packages = with pkgs; [
+    # chow-centaur
+    # chow-kick
+    # chow-phaser
+    # chow-tape-model
+    # depend on it.
+    # libsoup 2 is EOL, with many known unfixed CVEs unfortunately chow plugins
     calf
-    chow-centaur
-    chow-kick
-    chow-phaser
-    chow-tape-model
     guitarix
     gxplugins-lv2
     neural-amp-modeler-lv2
