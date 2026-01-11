@@ -39,7 +39,7 @@
             ]
             actions = {
                 update-props = {
-                    node.latency = 128/48000
+                    node.latency = 256/48000
                 }
             }
         }
@@ -51,7 +51,7 @@
             ]
             actions = {
                 update-props = {
-                    node.latency = 128/48000
+                    node.latency = 256/48000
                 }
             }
         }
