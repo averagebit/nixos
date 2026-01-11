@@ -10,12 +10,20 @@
   monitors = [
     {
       name = "HDMI-A-1";
-      width = 1920;
-      height = 1080;
       workspace = "1";
-      refreshRate = 100;
+      width = 2560;
+      height = 1440;
+      refreshRate = 99.946;
       primary = true;
     }
+    # {
+    #   name = "HDMI-A-1";
+    #   width = 1920;
+    #   height = 1080;
+    #   workspace = "1";
+    #   refreshRate = 100;
+    #   primary = true;
+    # }
     # {
     #   name = "DP-1";
     #   width = 1680;
