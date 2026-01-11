@@ -6,11 +6,17 @@
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
     systems.url = "github:nix-systems/default-linux";
     hardware.url = "github:nixos/nixos-hardware";
-    impermanence.url = "github:nix-community/impermanence";
 
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    impermanence = {
+      # url = "github:nix-community/impermanence";
+      url = "github:misterio77/impermanence";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
 
     sops-nix = {
@@ -51,11 +57,12 @@
     nixosModules = import ./modules/nixos;
     homeManagerModules = import ./modules/home-manager;
 
+    overlays = import ./overlays {inherit inputs outputs;};
+    templates = import ./templates;
+
     packages = forEachSystem (pkgs: import ./pkgs {inherit pkgs;});
     devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
-    overlays = import ./overlays {inherit inputs outputs;};
     formatter = forEachSystem (pkgs: pkgs.alejandra);
-    templates = import ./templates;
 
     nixosConfigurations = {
       anton = lib.nixosSystem {
@@ -76,27 +83,15 @@
       };
     };
 
-    homeConfigurations = {
-      "averagebit@anton" = lib.homeManagerConfiguration {
-        modules = [./home/averagebit/anton];
-        extraSpecialArgs = {inherit inputs outputs;};
-        pkgs = pkgsFor.x86_64-linux;
-      };
-      "averagebit@wopr" = lib.homeManagerConfiguration {
-        modules = [./home/averagebit/wopr];
-        extraSpecialArgs = {inherit inputs outputs;};
-        pkgs = pkgsFor.x86_64-linux;
-      };
-      "averagebit@zulu" = lib.homeManagerConfiguration {
-        modules = [./home/averagebit/zulu];
-        extraSpecialArgs = {inherit inputs outputs;};
-        pkgs = pkgsFor.x86_64-linux;
-      };
-      "averagebit@office" = lib.homeManagerConfiguration {
-        modules = [./home/averagebit/office];
-        extraSpecialArgs = {inherit inputs outputs;};
-        pkgs = pkgsFor.x86_64-linux;
-      };
-    };
+    # Standalone HM only
+    # homeConfigurations = {
+    #   "averagebit@zulu" = lib.homeManagerConfiguration {
+    #     modules = [./home/averagebit/zulu];
+    #     pkgs = pkgsFor.x86_64-linux;
+    #     extraSpecialArgs = {
+    #       inherit inputs outputs;
+    #     };
+    #   };
+    # };
   };
 }
