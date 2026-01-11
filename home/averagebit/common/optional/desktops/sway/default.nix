@@ -31,7 +31,7 @@
           value =
             if monitor.enabled
             then {
-              resolution = "${toString monitor.width}x${toString monitor.height}";
+              resolution = "${toString monitor.width}x${toString monitor.height}@${toString monitor.refreshRate}Hz";
               position = "${toString monitor.positionX} ${toString monitor.positionY}";
             }
             else {
@@ -101,7 +101,7 @@
 
       keybindings = let
         brightnessctl = lib.getExe pkgs.brightnessctl;
-        explorer = lib.getExe pkgs.xfce.thunar;
+        explorer = lib.getExe pkgs.thunar;
         grim = lib.getExe pkgs.grim;
         hyprpicker = lib.getExe pkgs.hyprpicker;
         makoctl = lib.getExe config.services.mako.package;
