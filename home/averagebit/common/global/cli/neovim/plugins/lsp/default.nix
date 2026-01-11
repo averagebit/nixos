@@ -22,7 +22,6 @@
             { "gD", "<cmd>lua vim.lsp.buf.declaration<cr>", desc = "Go to declaration" },
           }
 
-          local lspconfig = require('lspconfig')
           local servers = {
             ansiblels = {},
             astro = {},
@@ -60,24 +59,6 @@
             vim.lsp.enable(server)
             vim.lsp.config(server, options)
           end
-        '';
-    }
-    {
-      plugin = rust-tools-nvim;
-      type = "lua";
-      config =
-        /*
-        lua
-        */
-        ''
-          local rust_tools = require('rust-tools')
-          rust_tools.setup({
-            server = {
-              cmd = { "rust-analyzer" },
-              tools = { autoSetHints = true }
-            }
-          })
-          vim.api.nvim_set_hl(0, '@lsp.type.comment.rust', {})
         '';
     }
   ];

@@ -16,7 +16,7 @@
     ./lualine
     ./mason
     ./nvimtree
-    ./project
+    # ./project
     ./telescope
     ./treesitter
     ./whichkey
