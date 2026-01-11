@@ -125,7 +125,7 @@
 
       bind = let
         brightnessctl = lib.getExe pkgs.brightnessctl;
-        explorer = lib.getExe pkgs.xfce.thunar;
+        explorer = lib.getExe pkgs.thunar;
         grimblast = lib.getExe pkgs.grimblast;
         hyprpicker = lib.getExe pkgs.hyprpicker;
         makoctl = lib.getExe config.services.mako.package;
