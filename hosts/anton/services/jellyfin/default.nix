@@ -1,16 +1,36 @@
-{pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
+      intel-compute-runtime
       intel-media-driver
       intel-vaapi-driver
-      vaapiVdpau
+      libva-vdpau-driver
       libvdpau-va-gl
-      intel-compute-runtime
       vpl-gpu-rt
     ];
   };
   environment.sessionVariables = {LIBVA_DRIVER_NAME = "iHD";};
+  environment.systemPackages = with pkgs; [
+    mkvtoolnix
+    python313Packages.babelfish
+    python313Packages.chardet
+    python313Packages.dogpile-cache
+    python313Packages.enzyme
+    python313Packages.ffmpeg-python
+    python313Packages.guessit
+    python313Packages.pymediainfo
+    python313Packages.pysubs2
+    python313Packages.requests
+    python313Packages.srt
+    python313Packages.stevedore
+    python313Packages.subliminal
+    python313Packages.types-beautifulsoup4
+  ];
   services = {
     jellyfin = {
       enable = true;
@@ -32,6 +52,11 @@
     };
   };
   environment.persistence."/persist".directories = [
-    "/var/lib/jellyfin"
+    {
+      directory = "/var/lib/jellyfin";
+      user = config.services.jellyfin.user;
+      group = config.services.jellyfin.group;
+      mode = "0700";
+    }
   ];
 }
