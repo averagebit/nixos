@@ -29,22 +29,19 @@
   };
 
   home.persistence = {
-    "/persist/${config.home.homeDirectory}" = {
-      allowOther = true;
-      directories = [
-        "desktop"
-        "documents"
-        "downloads"
-        "music"
-        "pictures"
-        "public"
-        "templates"
-        "videos"
-        "workspace"
-        ".local/bin"
-        ".local/share/nix"
-      ];
-    };
+    "/persist/".directories = [
+      "desktop"
+      "documents"
+      "downloads"
+      "music"
+      "pictures"
+      "public"
+      "templates"
+      "videos"
+      "workspace"
+      ".local/bin"
+      ".local/share/nix"
+    ];
   };
 
   systemd.user.startServices = "sd-switch";

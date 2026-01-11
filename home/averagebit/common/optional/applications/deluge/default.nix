@@ -5,7 +5,7 @@
 }: {
   home.packages = with pkgs; [deluge];
   home.persistence = {
-    "/persist/${config.home.homeDirectory}".directories = [
+    "/persist/".directories = [
       ".config/deluge"
     ];
   };

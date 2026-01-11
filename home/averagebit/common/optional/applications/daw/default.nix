@@ -6,7 +6,7 @@
   imports = [./plugins.nix ./yabridge.nix];
   home.packages = with pkgs; [reaper];
   home.persistence = {
-    "/persist/${config.home.homeDirectory}".directories = [
+    "/persist/".directories = [
       ".local/share/daw"
       ".config/REAPER"
     ];

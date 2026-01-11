@@ -31,9 +31,9 @@
     gxplugins-lv2
     neural-amp-modeler-lv2
     odin2
-    plugdata
-    proteus
-    surge-XT
+    # plugdata
+    # proteus
+    # surge-XT
     tamgamp.lv2
     vital
     zam-plugins

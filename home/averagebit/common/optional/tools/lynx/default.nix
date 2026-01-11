@@ -5,7 +5,7 @@
 }: {
   home.packages = with pkgs; [lynx];
   home.persistence = {
-    "/persist/${config.home.homeDirectory}".directories = [".config/lynx"];
+    "/persist/".directories = [".config/lynx"];
   };
   home.file.".config/lynx/lynx.cfg".text = ''
     # $LynxId: lynx.cfg,v 1.302 2018/07/08 15:22:44 tom Exp $

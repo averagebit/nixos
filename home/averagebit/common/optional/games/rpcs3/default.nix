@@ -8,12 +8,9 @@
     rpcs3
   ];
   home.persistence = {
-    "/persist/${config.home.homeDirectory}" = {
-      allowOther = true;
-      directories = [
-        ".cache/rpcs3"
-        ".config/rpcs3"
-      ];
-    };
+    "/persist/".directories = [
+      ".cache/rpcs3"
+      ".config/rpcs3"
+    ];
   };
 }

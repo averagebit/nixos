@@ -3,10 +3,10 @@
   pkgs,
   ...
 }: {
-  # home.packages = with pkgs; [jellyfin-media-player];
+  home.packages = with pkgs; [element-desktop];
   home.persistence = {
     "/persist/".directories = [
-      ".config/jellyfin.org"
+      # ".config/vesktop/sessionData"
     ];
   };
 }

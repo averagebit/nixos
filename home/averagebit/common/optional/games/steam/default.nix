@@ -54,16 +54,13 @@ in {
     steam-with-pkgs
   ];
   home.persistence = {
-    "/persist/${config.home.homeDirectory}" = {
-      allowOther = true;
-      directories = [
-        ".local/share/Steam"
-        ".factorio"
-        ".config/unity3d/IronGate/Valheim"
-        ".local/share/Paradox Interactive"
-        ".paradoxlauncher"
-        "Zomboid"
-      ];
-    };
+    "/persist/".directories = [
+      ".local/share/Steam"
+      ".factorio"
+      ".config/unity3d/IronGate/Valheim"
+      ".local/share/Paradox Interactive"
+      ".paradoxlauncher"
+      "Zomboid"
+    ];
   };
 }
