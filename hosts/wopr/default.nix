@@ -6,7 +6,6 @@
     ../common/users/averagebit
     ../common/users/guest
 
-    ../common/optional/adb.nix
     ../common/optional/dconf.nix
     ../common/optional/docker.nix
     ../common/optional/gamemode.nix
@@ -23,6 +22,7 @@
     ../common/optional/vial.nix
     ../common/optional/waydroid.nix
     ../common/optional/wireshark.nix
+    ../common/optional/xpadneo.nix
     ../common/optional/yubikey.nix
   ];
 
