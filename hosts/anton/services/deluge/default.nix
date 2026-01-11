@@ -5,6 +5,7 @@
 
   services.deluge = {
     enable = true;
+    web.enable = true;
     declarative = true;
     authFile = config.sops.secrets.deluge-accounts.path;
     config = {
@@ -35,6 +36,19 @@
     owner = config.users.users.deluge.name;
     group = config.users.users.deluge.group;
     mode = "0600";
+  };
+
+  nginx.virtualHosts = {
+    "deluge.averagebit.com" = let
+      port = config.services.deluge.web.port;
+    in {
+      forceSSL = true;
+      enableACME = true;
+      acmeRoot = null;
+      locations."/" = {
+        proxyPass = "http://localhost:${toString port}";
+      };
+    };
   };
 
   networking.firewall = {
