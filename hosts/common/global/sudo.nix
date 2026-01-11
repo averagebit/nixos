@@ -1,7 +1,7 @@
 {
   security.sudo = {
     execWheelOnly = true;
-    wheelNeedsPassword = false;
+    # wheelNeedsPassword = false;
   };
 
   security.pam.loginLimits = [
