@@ -1,17 +1,17 @@
 {config, ...}: {
   programs.git = {
     enable = true;
-    userName = "averagebit";
-    userEmail = "averagebit@pm.me";
     includes = [{path = "~/.git/extra-config";}];
-    aliases = {co = "checkout";};
 
     signing = {
       key = "202C2696DF698259";
       signByDefault = true;
     };
 
-    extraConfig = {
+    settings = {
+      alias = {co = "checkout";};
+      user.name = "averagebit";
+      user.email = "averagebit@pm.me";
       init.defaultBranch = "main";
       user.signing.key = "202C2696DF698259";
       gpg.program = "${config.programs.gpg.package}/bin/gpg2";
