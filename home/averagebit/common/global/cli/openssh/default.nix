@@ -1,13 +1,8 @@
-{
-  config,
-  outputs,
-  ...
-}: let
+{outputs, ...}: let
   hostnames = builtins.attrNames outputs.nixosConfigurations;
 in {
   programs.ssh = {
     enable = true;
-    userKnownHostsFile = "${config.home.homeDirectory}/.ssh/known_hosts.d/hosts";
     matchBlocks = {
       net = {
         host = builtins.concatStringsSep " " hostnames;
@@ -21,9 +16,5 @@ in {
         extraOptions.StreamLocalBindUnlink = "yes";
       };
     };
-  };
-
-  home.persistence = {
-    "/persist/${config.home.homeDirectory}".directories = [".ssh/known_hosts.d"];
   };
 }
