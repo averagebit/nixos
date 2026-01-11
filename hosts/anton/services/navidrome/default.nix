@@ -5,7 +5,7 @@
       settings = {
         Address = "0.0.0.0";
         Port = 4533;
-        MusicFolder = "/media/storage/music";
+        MusicFolder = "/media/storage/media/music";
         CovertArtPriority = "*.jpg, *.JPG, *.png, *.PNG, embedded";
         AutoImportPlaylists = false;
         # EnableSharing = true;
@@ -21,6 +21,7 @@
       in {
         forceSSL = true;
         enableACME = true;
+        acmeRoot = null;
         locations."/".proxyPass = "http://localhost:${toString port}";
       };
     };
