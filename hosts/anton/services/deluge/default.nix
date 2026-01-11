@@ -27,7 +27,7 @@
       ];
       random_outgoing_ports = true;
     };
-    openFirewall = true;
+    # openFirewall = true;
   };
 
   sops.secrets.deluge-accounts = {
