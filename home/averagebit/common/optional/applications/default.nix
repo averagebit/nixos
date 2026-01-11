@@ -1,10 +1,13 @@
 {pkgs, ...}: {
   imports = [
+    ./audiorelay
     ./chrome
     ./daw
     ./deluge
     ./discord
+    ./element
     ./jellyfin
+    ./krita
     ./ledger
     ./obs
     ./obsidian
@@ -13,7 +16,7 @@
     ./slack
     ./spotify
     ./virt-manager
-    ./youtube-music
+    # ./youtube-music
   ];
 
   home.packages = with pkgs; [
