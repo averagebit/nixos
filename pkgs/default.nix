@@ -1,4 +1,5 @@
 {pkgs ? import <nixpkgs> {}}: {
+  audiorelay = pkgs.callPackage ./audiorelay {};
   cam = pkgs.callPackage ./cam {};
   cheat = pkgs.callPackage ./cheat {};
   clone = pkgs.callPackage ./clone {};
