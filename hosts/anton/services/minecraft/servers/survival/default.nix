@@ -1,14 +1,27 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: let
+  cfg = config.services.minecraft-servers.servers.survival;
+in {
+  # networking.firewall = {
+  #   allowedTCPPorts = [cfg.serverProperties.server-port];
+  #   allowedUDPPorts = [cfg.serverProperties.server-port];
+  # };
   services.minecraft-servers.servers.survival = {
     enable = true;
     enableReload = true;
     package = pkgs.inputs.nix-minecraft.paperServers.paper-1_21_4;
     jvmOpts = ((import ../../aikar-flags.nix) "2G") + "-Dpaper.disableChannelLimit=true";
+    whitelist = import ../../whitelist.nix;
     serverProperties = {
       server-port = 25565;
       online-mode = false;
+      white-list = true;
       motd = "Nixcraft Survival";
       difficulty = 3;
+      max-tick-time = 60000; # 1 minute
     };
     files = {
       "ops.json".value = [
