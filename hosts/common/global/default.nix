@@ -55,7 +55,7 @@
       file # File type information
       gdu # Disk usage analyzer
       git # Version control
-      glxinfo # Test utilities for OpenGL
+      mesa-demos # Test utilities for OpenGL
       hdparm # Disk information
       imagemagick # Image processing
       inetutils # Network utilities
@@ -67,7 +67,6 @@
       logrotate # Rotates and compresses system logs
       lshw # Hardware management
       lsof # Tool to list open files
-      mtpfs # FUSE Filesystem providing access to MTP devices
       netcat # TCP/IP swiss army knife
       nix-index # Nix file database
       nix-tree # Nix store explorer
