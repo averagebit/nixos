@@ -1,4 +1,5 @@
 {
+  lib,
   config,
   pkgs,
   ...
@@ -34,10 +35,7 @@
   services = {
     jellyfin = {
       enable = true;
-      user = "jellyfin";
-      group = "jellyfin";
       cacheDir = "/var/lib/jellyfin/cache";
-      # openFirewall = true;
     };
     nginx.virtualHosts = {
       "tv.averagebit.com" = {
@@ -50,6 +48,13 @@
         };
       };
     };
+  };
+
+  systemd = {
+    tmpfiles.settings.jellyfinDirs = {
+      "${config.services.jellyfin.dataDir}".d.mode = lib.mkForce "750";
+    };
+    services.jellyfin.serviceConfig.UMask = lib.mkForce "0027";
   };
   environment.persistence."/persist".directories = [
     {
