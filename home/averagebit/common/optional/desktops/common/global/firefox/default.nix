@@ -109,10 +109,46 @@
                 url = "https://books.averagebit.com/";
               }
               {
+                name = "Requests";
+                tags = ["services"];
+                keyword = "requests";
+                url = "https://requests.averagebit.com/";
+              }
+              {
                 name = "Git";
                 tags = ["services"];
                 keyword = "git";
                 url = "https://git.averagebit.com/";
+              }
+              {
+                name = "Radarr";
+                tags = ["services"];
+                keyword = "radarr";
+                url = "https://arr.averagebit.com/radarr";
+              }
+              {
+                name = "Sonarr";
+                tags = ["services"];
+                keyword = "sonarr";
+                url = "https://arr.averagebit.com/sonarr";
+              }
+              {
+                name = "Lidarr";
+                tags = ["services"];
+                keyword = "lidarr";
+                url = "https://arr.averagebit.com/lidarr";
+              }
+              {
+                name = "Prowlarr";
+                tags = ["services"];
+                keyword = "prowlarr";
+                url = "https://arr.averagebit.com/prowlarr";
+              }
+              {
+                name = "Bazarr";
+                tags = ["services"];
+                keyword = "bazarr";
+                url = "https://arr.averagebit.com/bazarr";
               }
             ];
           }
