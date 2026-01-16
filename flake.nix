@@ -77,10 +77,6 @@
         modules = [./hosts/zulu];
         specialArgs = {inherit inputs outputs;};
       };
-      office = lib.nixosSystem {
-        modules = [./hosts/office];
-        specialArgs = {inherit inputs outputs;};
-      };
     };
 
     # Standalone HM only
