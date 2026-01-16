@@ -12,9 +12,9 @@
         __version__ = 19
         __encoding__ = utf-8
         [misc]
+        bandwidth_max = 4M
         config_conversion_version = 4
         helpful_warnings = 1
-        speedlimit = 4000
         queue_complete = ""
         queue_complete_pers = 0
         bandwidth_perc = 100
@@ -35,7 +35,6 @@
         https_port = ""
         username = ""
         password = ""
-        bandwidth_max = ""
         cache_limit = 1G
         web_dir = /var/lib/sabnzbd/web
         web_color = Auto
