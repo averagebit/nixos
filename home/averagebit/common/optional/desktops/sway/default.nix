@@ -16,6 +16,7 @@
 
   wayland.windowManager.sway = {
     enable = true;
+    wrapperFeatures.gtk = true;
     config = with config.colorscheme; {
       modifier = "Mod4";
       terminal = "${lib.getExe pkgs.foot}";
