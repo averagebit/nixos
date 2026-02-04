@@ -20,6 +20,7 @@
               rust = { "rustfmt", lsp_format = "fallback" },
               sh = { "shfmt", lsp_format = "fallback" },
               shell = { "shfmt", lsp_format = "fallback" },
+              sql = { "pg_format", lsp_format = "fallback" },
               webassembly = { "wasm-language-tools", lsp_format = "fallback" };
               angular = { "prettierd", "prettier", stop_after_first = true },
               css = { "prettierd", "prettier", stop_after_first = true },
@@ -38,7 +39,7 @@
             },
             format_on_save = function(bufnr)
               -- Disable autoformat on certain filetypes
-              local ignore_filetypes = { "sql" }
+              local ignore_filetypes = {}
               if vim.tbl_contains(ignore_filetypes, vim.bo[bufnr].filetype) then
                 return
               end

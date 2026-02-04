@@ -2,11 +2,11 @@
   imports = [
     ./alpha
     ./autopairs
+    ./claude
     ./cmp
     ./colorscheme
     ./comment
     ./conform
-    ./copilot
     ./dap
     ./devicons
     ./gitsigns
