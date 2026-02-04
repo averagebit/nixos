@@ -4,8 +4,11 @@
     ../../common/optional/postgres.nix
     ../../common/optional/nginx.nix
 
+    ./actual
     ./audiobookshelf
+    ./authelia
     ./bazarr
+    ./blocky
     ./deluge
     ./forgejo
     ./grafana
@@ -23,5 +26,6 @@
     ./sonarr
     ./unifi
     ./valheim
+    ./vaultwarden
   ];
 }

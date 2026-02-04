@@ -32,8 +32,8 @@
       "git.averagebit.com" = let
         port = config.services.forgejo.settings.server.HTTP_PORT;
       in {
-        forceSSL = true;
         enableACME = true;
+        forceSSL = true;
         acmeRoot = null;
         locations."/" = {
           proxyPass = "http://localhost:${toString port}";

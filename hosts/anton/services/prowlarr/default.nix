@@ -10,12 +10,13 @@
       settings = {
         server.urlBase = "/prowlarr";
         log.analyticsEnabled = false;
+        app.theme = "dark";
       };
     };
     nginx.virtualHosts = {
       "arr.averagebit.com" = {
-        forceSSL = true;
         enableACME = true;
+        forceSSL = true;
         acmeRoot = null;
         locations."/prowlarr/" = let
           port = config.services.prowlarr.settings.server.port;

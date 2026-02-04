@@ -36,6 +36,7 @@
     jellyfin = {
       enable = true;
       cacheDir = "/var/lib/jellyfin/cache";
+      openFirewall = true;
     };
     nginx.virtualHosts = {
       "tv.averagebit.com" = {

@@ -6,12 +6,13 @@
       settings = {
         server.urlBase = "/sonarr";
         log.analyticsEnabled = false;
+        app.theme = "dark";
       };
     };
     nginx.virtualHosts = {
       "arr.averagebit.com" = {
-        forceSSL = true;
         enableACME = true;
+        forceSSL = true;
         acmeRoot = null;
         locations."/sonarr/" = let
           port = config.services.sonarr.settings.server.port;

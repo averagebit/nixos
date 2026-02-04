@@ -11,7 +11,7 @@
       enable = true;
       settings = {
         server.http_port = 3000;
-        users.default_theme = "system";
+        users.default_theme = "dark";
         dashboards.default_home_dashboard_path = "${./dashboards}/hosts.json";
         security = {
           admin_user = "averagebit";
@@ -47,10 +47,13 @@
       "dash.averagebit.com" = let
         port = config.services.grafana.settings.server.http_port;
       in {
-        forceSSL = true;
         enableACME = true;
+        forceSSL = true;
         acmeRoot = null;
-        locations."/".proxyPass = "http://localhost:${toString port}";
+        locations."/" = {
+          proxyPass = "http://localhost:${toString port}";
+          proxyWebsockets = true;
+        };
       };
     };
   };

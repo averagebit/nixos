@@ -8,8 +8,8 @@
     };
     nginx.virtualHosts = {
       "wifi.averagebit.com" = {
-        forceSSL = true;
         enableACME = true;
+        forceSSL = true;
         acmeRoot = null;
         locations."/" = {
           proxyPass = "https://localhost:8443";

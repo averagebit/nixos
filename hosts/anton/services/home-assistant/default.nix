@@ -107,14 +107,14 @@
       "home.averagebit.com" = let
         port = config.services.home-assistant.config.http.server_port;
       in {
-        forceSSL = true;
         enableACME = true;
+        forceSSL = true;
         acmeRoot = null;
         extraConfig = ''
           proxy_buffering off;
         '';
         locations."/" = {
-          proxyPass = "http://[::1]:${toString port}";
+          proxyPass = "http://localhost:${toString port}";
           proxyWebsockets = true;
         };
       };

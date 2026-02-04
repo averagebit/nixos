@@ -70,7 +70,7 @@
                 name = "Wi-Fi";
                 tags = ["local"];
                 keyword = "wifi";
-                url = "https://wifi.home.arpa/";
+                url = "https://wifi.averagebit.com/";
               }
             ];
           }
@@ -107,6 +107,12 @@
                 tags = ["services"];
                 keyword = "books";
                 url = "https://books.averagebit.com/";
+              }
+              {
+                name = "Budget";
+                tags = ["services"];
+                keyword = "budget";
+                url = "https://budget.averagebit.com/";
               }
               {
                 name = "Requests";
@@ -148,7 +154,7 @@
                 name = "Bazarr";
                 tags = ["services"];
                 keyword = "bazarr";
-                url = "https://arr.averagebit.com/bazarr";
+                url = "https://bazarr.averagebit.com/";
               }
             ];
           }

@@ -381,6 +381,26 @@
         password = ${config.sops.placeholder.frugalusenet-key}
         connections = 50
         priority = 1
+        [[blocknews]]
+        enable = 1
+        name = blocknews
+        host = eunews.blocknews.net
+        ssl = 1
+        port = 563
+        username = averagebit
+        password = ${config.sops.placeholder.blocknews-key}
+        connections = 50
+        priority = 2
+        [[blocknews-secondary]]
+        enable = 1
+        name = blocknews-secondary
+        host = usnews.blocknews.net
+        ssl = 1
+        port = 563
+        username = averagebit
+        password = ${config.sops.placeholder.blocknews-key}
+        connections = 50
+        priority = 2
       '';
     owner = config.services.sabnzbd.user;
     group = config.services.sabnzbd.group;
@@ -391,6 +411,7 @@
     sabnzbd-api-key.sopsFile = ../../secrets.yaml;
     sabnzbd-nzb-key.sopsFile = ../../secrets.yaml;
     frugalusenet-key.sopsFile = ../../secrets.yaml;
+    blocknews-key.sopsFile = ../../secrets.yaml;
   };
   systemd.tmpfiles.settings.srv-usenet."/media/storage/downloads/usenet".d = {
     user = config.services.sabnzbd.user;

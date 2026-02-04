@@ -6,8 +6,8 @@
     };
     nginx.virtualHosts = {
       "bazarr.averagebit.com" = {
-        forceSSL = true;
         enableACME = true;
+        forceSSL = true;
         acmeRoot = null;
         locations."/" = let
           port = config.services.bazarr.listenPort;

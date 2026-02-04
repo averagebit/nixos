@@ -6,12 +6,13 @@
       settings = {
         server.urlBase = "/radarr";
         log.analyticsEnabled = false;
+        app.theme = "dark";
       };
     };
     nginx.virtualHosts = {
       "arr.averagebit.com" = {
-        forceSSL = true;
         enableACME = true;
+        forceSSL = true;
         acmeRoot = null;
         locations."/radarr/" = let
           port = config.services.radarr.settings.server.port;

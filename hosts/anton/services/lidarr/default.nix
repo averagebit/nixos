@@ -6,12 +6,13 @@
       settings = {
         server.urlBase = "/lidarr";
         log.analyticsEnabled = false;
+        app.theme = "dark";
       };
     };
     nginx.virtualHosts = {
       "arr.averagebit.com" = {
-        forceSSL = true;
         enableACME = true;
+        forceSSL = true;
         acmeRoot = null;
         locations."/lidarr/" = let
           port = config.services.lidarr.settings.server.port;
