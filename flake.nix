@@ -33,6 +33,8 @@
       url = "github:Infinidoge/nix-minecraft";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    enduropass-api-dev.url = "git+ssh://git@github.com/averagebit/enduropass.git?ref=main";
   };
 
   outputs = {
