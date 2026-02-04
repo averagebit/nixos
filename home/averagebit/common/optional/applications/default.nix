@@ -11,6 +11,7 @@
     ./ledger
     ./obs
     ./obsidian
+    ./postman
     ./qjackctl
     ./signal
     ./slack
