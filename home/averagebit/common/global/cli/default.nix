@@ -2,6 +2,7 @@
   imports = [
     ./bash
     ./btop
+    ./claude
     ./direnv
     ./fzf
     ./gh
@@ -9,8 +10,8 @@
     ./gpg
     ./lazygit
     ./neovim
-    ./openssh
     ./nitch
+    ./openssh
     ./starship
     ./tmux
   ];
