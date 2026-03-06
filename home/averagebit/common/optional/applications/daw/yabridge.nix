@@ -7,7 +7,7 @@
     packages = with pkgs; [
       yabridge
       yabridgectl
-      wineWowPackages.staging
+      wineWow64Packages.staging
     ];
     sessionVariables = {
       WINEPREFIX = "/home/${config.home.username}/.local/share/wine/default";
