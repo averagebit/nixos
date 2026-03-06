@@ -1,5 +1,5 @@
 {
-  programs.neovim.extraLuaConfig =
+  programs.neovim.initLua =
     /*
     lua
     */
