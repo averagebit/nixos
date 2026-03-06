@@ -32,9 +32,9 @@
       templates = "${config.home.homeDirectory}/templates";
       videos = "${config.home.homeDirectory}/videos";
       extraConfig = {
-        XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/pictures/screenshots";
-        XDG_WORKSPACE_DIR = "${config.home.homeDirectory}/workspace";
-        XDG_REPOS_DIR = "${config.home.homeDirectory}/workspace/repos";
+        SCREENSHOTS = "${config.home.homeDirectory}/pictures/screenshots";
+        WORKSPACE = "${config.home.homeDirectory}/workspace";
+        REPOS = "${config.home.homeDirectory}/workspace/repos";
       };
     };
   };
