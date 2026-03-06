@@ -7,7 +7,7 @@
     ./discord
     ./element
     ./jellyfin
-    ./krita
+    # ./krita
     ./ledger
     ./obs
     ./obsidian
