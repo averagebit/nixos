@@ -4,9 +4,7 @@
   outputs,
   ...
 }: let
-  inherit (config.networking) hostName;
-  hosts = outputs.nixosConfigurations;
-  pubKey = host: ../../${host}/ssh_host_ed25519_key.pub;
+  hosts = lib.attrNames outputs.nixosConfigurations;
   hasOptinPersistence = config.environment.persistence ? "/persist";
 in {
   services.openssh = {
@@ -28,13 +26,11 @@ in {
   };
 
   programs.ssh = {
-    knownHosts =
-      builtins.mapAttrs
-      (name: _: {
-        publicKeyFile = pubKey name;
-        extraHostNames =
-          lib.optional (name == hostName) "localhost";
-      })
-      hosts;
+    knownHosts = lib.genAttrs hosts (hostname: {
+      publicKeyFile = ../../${hostname}/ssh_host_ed25519_key.pub;
+      extraHostNames =
+        ["${hostname}"]
+        ++ (lib.optional (hostname == config.networking.hostName) "localhost");
+    });
   };
 }
