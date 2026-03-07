@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
+export NIX_SSHOPTS="-A"
+
+build_remote=false
 
 hosts="$1"
 shift
 
-[[ -z "$hosts" ]] && {
+if [ -z "$hosts" ]; then
     echo "No hosts to deploy"
-    exit 1
-}
+    exit 2
+fi
 
 for host in ${hosts//,/ }; do
-    nixos-rebuild switch --flake .\#$host --build-host $host --target-host $host --sudo --ask-sudo-password --use-substitutes $@
+    nixos-rebuild --flake .\#$host switch --target-host $host --use-remote-sudo --use-substitutes $@
 done
