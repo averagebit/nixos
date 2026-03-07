@@ -47,13 +47,13 @@ in {
         hash = "sha256-APhkCE+CeghzjLjV1CLqkcfJtsw8IHGMJKKfsGbflYI=";
       };
       "plugins/Spark.jar" = let
-        build = "483";
+        build = "516";
       in
         pkgs.fetchurl rec {
           pname = "spark";
-          version = "1.10.134";
+          version = "1.10.167";
           url = "https://ci.lucko.me/job/${pname}/${build}/artifact/${pname}-bukkit/build/libs/${pname}-${version}-bukkit.jar";
-          hash = "sha256-7X9XknJJcVwskiNUsYXgablUCIgnKnA4tNGA7f3o4rU=";
+          hash = "sha256-muoWgR6DxFAEkp886QVF3C2Fak7Nh4yvk+tmMU5TZs4=";
         };
     };
   };
