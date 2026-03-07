@@ -96,36 +96,43 @@
       sopsFile = ../../secrets.yaml;
       owner = "authelia-main";
       group = "authelia-main";
+      mode = "0600";
     };
     authelia-session-secret = {
       sopsFile = ../../secrets.yaml;
       owner = "authelia-main";
       group = "authelia-main";
+      mode = "0600";
     };
     authelia-oidc-hmac-secret = {
       sopsFile = ../../secrets.yaml;
       owner = "authelia-main";
       group = "authelia-main";
+      mode = "0600";
     };
     authelia-oidc-issuer-key = {
       sopsFile = ../../secrets.yaml;
       owner = "authelia-main";
       group = "authelia-main";
+      mode = "0600";
     };
     authelia-storage-key = {
       sopsFile = ../../secrets.yaml;
       owner = "authelia-main";
       group = "authelia-main";
+      mode = "0600";
     };
     authelia-users = {
       sopsFile = ../../secrets.yaml;
       owner = "authelia-main";
       group = "authelia-main";
+      mode = "0600";
     };
     authelia-identity-providers = {
       sopsFile = ../../secrets.yaml;
       owner = "authelia-main";
       group = "authelia-main";
+      mode = "0600";
     };
   };
 

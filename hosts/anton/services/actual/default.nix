@@ -45,11 +45,13 @@
   #     sopsFile = ../../secrets.yaml;
   #     owner = "actual";
   #     group = "actual";
+  #     mode = "0600";
   #   };
   #   authelia-actual-client-secret = {
   #     sopsFile = ../../secrets.yaml;
   #     owner = "actual";
   #     group = "actual";
+  #     mode = "0600";
   #   };
   # };
   systemd.tmpfiles.rules = [

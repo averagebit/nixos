@@ -3,12 +3,6 @@
   config,
   ...
 }: {
-  sops.secrets = {
-    forgejo-averagebit-password = {
-      sopsFile = ../../secrets.yaml;
-      owner = "forgejo";
-    };
-  };
   services = {
     forgejo = {
       enable = true;
@@ -42,6 +36,14 @@
           '';
         };
       };
+    };
+  };
+  sops.secrets = {
+    forgejo-averagebit-password = {
+      sopsFile = ../../secrets.yaml;
+      owner = "forgejo";
+      group = "forgejo";
+      mode = "0600";
     };
   };
   systemd.tmpfiles.rules = let

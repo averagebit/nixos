@@ -30,6 +30,8 @@
     vaultwarden = {
       sopsFile = ../../secrets.yaml;
       owner = config.users.users.vaultwarden.name;
+      group = config.users.users.vaultwarden.name;
+      mode = "0600";
     };
   };
   environment.persistence."/persist".directories = [

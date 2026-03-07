@@ -1,11 +1,4 @@
 {config, ...}: {
-  sops.secrets = {
-    grafana-averagebit-password = {
-      sopsFile = ../../secrets.yaml;
-      owner = "grafana";
-    };
-  };
-
   services = {
     grafana = {
       enable = true;
@@ -17,6 +10,7 @@
           admin_user = "averagebit";
           admin_password = "$__file{${config.sops.secrets.grafana-averagebit-password.path}}";
           cookie_secure = true;
+          secret_key = config.sops.secrets.grafana-secret-key.path;
         };
         "auth.anonymous" = {
           enabled = false;
@@ -55,6 +49,20 @@
           proxyWebsockets = true;
         };
       };
+    };
+  };
+  sops.secrets = {
+    grafana-averagebit-password = {
+      sopsFile = ../../secrets.yaml;
+      owner = "grafana";
+      group = "grafana";
+      mode = "0600";
+    };
+    grafana-secret-key = {
+      sopsFile = ../../secrets.yaml;
+      owner = "grafana";
+      group = "grafana";
+      mode = "0600";
     };
   };
 }

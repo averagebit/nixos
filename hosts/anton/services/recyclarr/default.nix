@@ -320,11 +320,13 @@
       sopsFile = ../../secrets.yaml;
       owner = config.services.recyclarr.user;
       group = config.services.recyclarr.group;
+      mode = "0600";
     };
     radarr-key = {
       sopsFile = ../../secrets.yaml;
       owner = config.services.recyclarr.user;
       group = config.services.recyclarr.group;
+      mode = "0600";
     };
   };
 }
