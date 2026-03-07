@@ -82,14 +82,14 @@
     };
 
     # Standalone HM only
-    # homeConfigurations = {
-    #   "averagebit@zulu" = lib.homeManagerConfiguration {
-    #     modules = [./home/averagebit/zulu];
-    #     pkgs = pkgsFor.x86_64-linux;
-    #     extraSpecialArgs = {
-    #       inherit inputs outputs;
-    #     };
-    #   };
-    # };
+    homeConfigurations = {
+      "averagebit@zulu" = lib.homeManagerConfiguration {
+        modules = [./home/averagebit/zulu];
+        pkgs = pkgsFor.x86_64-linux;
+        extraSpecialArgs = {
+          inherit inputs outputs;
+        };
+      };
+    };
   };
 }
