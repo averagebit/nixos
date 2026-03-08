@@ -11,7 +11,7 @@
     ../common/optional/gamemode.nix
     ../common/optional/greetd.nix
     ../common/optional/ledger.nix
-    ../common/optional/libvirtd.nix
+    # ../common/optional/libvirtd.nix
     ../common/optional/opengl.nix
     ../common/optional/pipewire.nix
     ../common/optional/podman.nix
