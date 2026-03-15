@@ -6,6 +6,42 @@
 }: let
   swayEnabled = config.wayland.windowManager.sway.enable;
   hyprlandEnabled = config.wayland.windowManager.hyprland.enable;
+  commonDeps = with pkgs; [coreutils gnugrep systemd];
+  mkScript = {
+    name ? "script",
+    deps ? [],
+    script ? "",
+  }:
+    lib.getExe (pkgs.writeShellApplication {
+      inherit name;
+      text = script;
+      runtimeInputs = commonDeps ++ deps;
+    });
+  # Specialized for JSON outputs
+  mkScriptJson = {
+    name ? "script",
+    deps ? [],
+    script ? "",
+    text ? "",
+    tooltip ? "",
+    alt ? "",
+    class ? "",
+    percentage ? "",
+  }:
+    mkScript {
+      inherit name;
+      deps = [pkgs.jq] ++ deps;
+      script = ''
+        ${script}
+        jq -cn \
+          --arg text "${text}" \
+          --arg tooltip "${tooltip}" \
+          --arg alt "${alt}" \
+          --arg class "${class}" \
+          --arg percentage "${percentage}" \
+          '{text:$text,tooltip:$tooltip,alt:$alt,class:$class,percentage:$percentage}'
+      '';
+    };
 in {
   programs.waybar = {
     enable = true;
@@ -238,7 +274,20 @@ in {
           tooltip-format = "{desc}, {volume}%";
           scroll-step = 5;
           on-click = "${lib.getExe pkgs.pamixer} -t";
-          on-click-right = "${lib.getExe pkgs.pamixer} --default-source -t";
+          on-click-right = mkScript {
+            script = ''
+
+              if ${pkgs.pipewire}/bin/pw-link -l | grep -A1 "virtual-source:input_FL" | grep -q "REAPER:out1"; then
+                ${pkgs.pipewire}/bin/pw-link -d REAPER:out1 virtual-source:input_FL
+                ${pkgs.pipewire}/bin/pw-link -d REAPER:out2 virtual-source:input_FR
+                ${pkgs.pulseaudio}/bin/pactl set-source-mute virtual-source 1
+              else
+                ${pkgs.pipewire}/bin/pw-link REAPER:out1 virtual-source:input_FL
+                ${pkgs.pipewire}/bin/pw-link REAPER:out2 virtual-source:input_FR
+                ${pkgs.pulseaudio}/bin/pactl set-source-mute virtual-source 0
+              fi
+            '';
+          };
           on-click-middle = "${lib.getExe pkgs.pavucontrol}";
         };
         tray = {
